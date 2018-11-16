@@ -1,6 +1,7 @@
 package Tools;
 
-/** Represents the Node's operation
+/**
+ * Represents the Node's operation.
  * That is, what operation led to this node (=current state of the game).
  */
 public class Move {
@@ -10,7 +11,7 @@ public class Move {
      */
     private char direction;
 
-    /* Set & Get*/
+    /* Getters & Setters*/
     public void setDirection(char dir){
         this.direction = dir;
     }
