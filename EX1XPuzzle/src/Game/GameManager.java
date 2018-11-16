@@ -1,7 +1,9 @@
 package Game;
 import SearchAlgorithms.SearchAlgorithm;
 import Tools.InputTranslator;
-import Tools.Node;
+import Tools.Output;
+import Tools.OutputGenerator;
+
 import static Tools.InputTranslator.StringToIntParser;
 
 /**
@@ -9,21 +11,21 @@ import static Tools.InputTranslator.StringToIntParser;
  */
 public class GameManager {
     /* Properties */
-    private InputTranslator it = new InputTranslator();
+    private InputTranslator it;
     private SearchAlgorithm algorithm;
     private int boardSize;
     private Board initialBoard;
-    private Board finalBoard;
-    private Node goal;
+    private Board goalBoard;
 
     /* Constructor */
     /**
      * Constructs a new game
      * @param input the input strings
      */
-    public GameManager(String[] input){
+    public GameManager(String[] input, String inputPath){
+        it = new InputTranslator(inputPath);
         inputTranslate(input);
-        goal = goalNodeGenerator();
+        goalBoardGenerator();
     }
 
     /* Methods*/
@@ -42,7 +44,7 @@ public class GameManager {
     private void inputSize(String size){
         boardSize = StringToIntParser(size);
         initialBoard = new Board(boardSize);
-        finalBoard = new Board(boardSize);
+        goalBoard = new Board(boardSize);
     }
     /**
      * Turns the given board from String to Board
@@ -65,9 +67,8 @@ public class GameManager {
     }
     /**
      * Creates the goal node
-     * @return a goal Node
      */
-    private Node goalNodeGenerator(){
+    private void goalBoardGenerator(){
         // creating board cells values;
         String s = "1";
         int i;
@@ -76,13 +77,13 @@ public class GameManager {
         }
         s+= "-" + 0;
 
-        finalBoard.boardGenerator(s);
-        return new Node(finalBoard,null,null);
+        goalBoard.boardGenerator(s);
     }
     /**
      * runs the game after it was initialized.
      */
     public void run(){
-        algorithm.execute(initialBoard, boardSize, goal);
+        Output output = algorithm.execute(boardSize, initialBoard, goalBoard);
+        OutputGenerator.generateOutputFile(output, it.getFilePath());
     }
 }

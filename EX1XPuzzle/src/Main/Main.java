@@ -12,7 +12,9 @@ public class Main {
      */
     public static void main(String[] args) {
         String[] input = FileExtractor.extract(args[0]);
-        GameManager gameManager = new GameManager(input);
+        int i = args[0].lastIndexOf('\\');
+        String filePath = args[0].substring(0, i);
+        GameManager gameManager = new GameManager(input,filePath);
         gameManager.run();
     }
 }

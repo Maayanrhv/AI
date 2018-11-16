@@ -1,7 +1,7 @@
 package SearchAlgorithms;
 import Game.Board;
-import Tools.Node;
+import Tools.Output;
 
 public interface SearchAlgorithm {
-    void execute(Board board, int size, Node goal);
+    Output execute(int size, Board initial, Board goal);
 }

@@ -19,6 +19,14 @@ public class Board {
         board = new int[size][size];
     }
 
+    /* Getters & Setters */
+    /**
+     * @return the board matrix
+     */
+    public int[][] getBoard(){
+        return board;
+    }
+
     /* Methods */
     /**
      * Generates the board
@@ -38,6 +46,22 @@ public class Board {
                 k++;
             }
         }
+    }
+    /**
+     * checks if this board is equal to a given one.
+     * @param b the given board
+     * @return true if equal, false otherwise.
+     */
+    public boolean isEqual(Board b) {
+        int[][] temp = b.getBoard();
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+                if(board[i][j] != temp[i][j]){
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 
     public void print(){

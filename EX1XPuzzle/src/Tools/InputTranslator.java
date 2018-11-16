@@ -15,12 +15,14 @@ public class InputTranslator {
     private AStar aStar;
     private IDS ids;
     private Map<Integer, SearchAlgorithm> algorithmTypes = new HashMap<>();
+    private String filePath;
 
     /* Constructor */
     /**
      * Constructs a new InputTranslator instance.
      */
-    public InputTranslator(){
+    public InputTranslator(String fPath){
+        filePath = fPath;
         bfs = new BFS();
         aStar = new AStar();
         ids = new IDS();
@@ -29,21 +31,26 @@ public class InputTranslator {
 
     /* Getters & Setters */
     /**
-     * getting a requested algorithm by a given key.
-     * @param key of the requested algorithm
-     * @return the requested algorithm
-     */
-    public SearchAlgorithm getAlgorithm(int key){
-
-        return algorithmTypes.get(key);
-    }
-    /**
      * Setting the algorithms dictionary
      */
     private void setDictionary (){
         algorithmTypes.put(1,ids);
         algorithmTypes.put(2,bfs);
         algorithmTypes.put(3,aStar);
+    }
+    /**
+     * getting a requested algorithm by a given key.
+     * @param key of the requested algorithm
+     * @return the requested algorithm
+     */
+    public SearchAlgorithm getAlgorithm(int key){
+        return algorithmTypes.get(key);
+    }
+    /**
+     * @return the input file's path.
+     */
+    public String getFilePath(){
+        return filePath;
     }
 
     /* Methods */
