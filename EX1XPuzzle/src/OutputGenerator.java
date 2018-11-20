@@ -1,15 +1,16 @@
-package Tools;
 import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.io.IOException;
 
 /**
- * Generates an output file.
+ * Generates an output file in a given directory path.
+ * This path was originally chosen to be the input file directory.
  */
 public class OutputGenerator {
     /**
      * Generates an output file.
      * @param output the output data to add to the file.
+     * @param filePath the output directory
      */
     public static void generateOutputFile(Output output, String filePath){
         try {

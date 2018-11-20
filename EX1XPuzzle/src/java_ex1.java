@@ -1,11 +1,9 @@
-package Main;
-import Game.GameManager;
-import Tools.FileExtractor;
-
 /**
  * The main class.
+ * Extract the input data from input file.
+ * Calls the game manager to run the game.
  */
-public class Main {
+public class java_ex1 {
     /**
      * The main function that creates the game and runs it.
      * @param args the input file

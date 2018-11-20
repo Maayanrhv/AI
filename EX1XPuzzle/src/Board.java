@@ -1,8 +1,6 @@
-package Game;
-import static Tools.InputTranslator.StringToIntParser;
-
 /**
- * A game board representing a possible state during the game.
+ * This class is a game board representing a possible state during the game.
+ * Each Node instance has a board that represent's its state.
  */
 public class Board {
     /* Properties */
@@ -37,7 +35,7 @@ public class Board {
         int[] numbersInBoard = new int[size*size];
         // parse input strings to ints and add it to numbersInBoard array
         for (int i=0; i<size*size; i++){
-            numbersInBoard[i] = StringToIntParser(cells[i]);
+            numbersInBoard[i] = InputTranslator.StringToIntParser(cells[i]);
         }
         int k = 0;
         for (int i=0; i<size; i++){
@@ -47,6 +45,7 @@ public class Board {
             }
         }
     }
+
     /**
      * checks if this board is equal to a given one.
      * @param b the given board
@@ -62,14 +61,5 @@ public class Board {
             }
         }
         return true;
-    }
-
-    public void print(){
-        for (int i=0; i<3; i++){
-            for (int j=0; j<3; j++){
-                System.out.print(board[i][j]);
-            }
-            System.out.println();
-        }
     }
 }

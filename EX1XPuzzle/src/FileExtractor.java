@@ -1,11 +1,11 @@
-package Tools;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
 /**
- * Takes data from input file and turns each line into a string
+ * This class takes data from input file and turns each line into a string.
+ * Each string is added to a String array to be sent to the game manager.
  */
 public class FileExtractor {
     /**

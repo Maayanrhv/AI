@@ -1,13 +1,7 @@
-package Game;
-import SearchAlgorithms.SearchAlgorithm;
-import Tools.InputTranslator;
-import Tools.Output;
-import Tools.OutputGenerator;
-
-import static Tools.InputTranslator.StringToIntParser;
-
 /**
  * Runs the entire game.
+ * Receives the input data and the path of the output file
+ * to be created at the end of the game.
  */
 public class GameManager {
     /* Properties */
@@ -21,6 +15,8 @@ public class GameManager {
     /**
      * Constructs a new game
      * @param input the input strings
+     * @param inputPath the directory of the input file
+     *                  to create the output file in
      */
     public GameManager(String[] input, String inputPath){
         it = new InputTranslator(inputPath);
@@ -34,7 +30,7 @@ public class GameManager {
      * @param key indicates which algorithm to use.
      */
     private void inputAlgorithm(String key){
-        int k = StringToIntParser(key);
+        int k = InputTranslator.StringToIntParser(key);
         algorithm = it.getAlgorithm(k);
     }
     /**
@@ -42,7 +38,7 @@ public class GameManager {
      * @param size the board size
      */
     private void inputSize(String size){
-        boardSize = StringToIntParser(size);
+        boardSize = InputTranslator.StringToIntParser(size);
         initialBoard = new Board(boardSize);
         goalBoard = new Board(boardSize);
     }

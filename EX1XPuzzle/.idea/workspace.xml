@@ -1,20 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bb5e3f14-f8f9-4372-acf2-6d443f6af918" name="Default Changelist" comment="Done wrapping the game. All that's left is to write the algorithms.">
-      <change afterPath="$PROJECT_DIR$/src/Tools/Output.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Tools/OutputGenerator.java" afterDir="false" />
+    <list default="true" id="bb5e3f14-f8f9-4372-acf2-6d443f6af918" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/AStar.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/BFS.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IDS.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/SearchAlgorithm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/GameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/GameManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SearchAlgorithms/AStar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SearchAlgorithms/AStar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SearchAlgorithms/BFS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SearchAlgorithms/BFS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SearchAlgorithms/IDS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SearchAlgorithms/IDS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SearchAlgorithms/SearchAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SearchAlgorithms/SearchAlgorithm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tools/InputTranslator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tools/InputTranslator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tools/Move.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tools/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tools/Node.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/GameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java_ex1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SearchAlgorithms/AStar.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SearchAlgorithms/BFS.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SearchAlgorithms/IDS.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SearchAlgorithms/SearchAlgorithm.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tools/FileExtractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FileExtractor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tools/InputTranslator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InputTranslator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tools/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Node.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tools/Output.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Output.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tools/OutputGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OutputGenerator.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -34,24 +38,24 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="48" />
+          <entry key="java" value="102" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="48" />
+          <entry key="JAVA" value="102" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="4" />
-          <entry key="java" value="8331" />
+          <entry key="java" value="13559" />
           <entry key="txt" value="206" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="8331" />
+          <entry key="JAVA" value="13559" />
           <entry key="PLAIN_TEXT" value="210" />
         </counts>
       </usages-collector>
@@ -59,75 +63,17 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/SearchAlgorithms/BFS.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="8" column="31" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Tools/Node.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="21" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
-              <folding>
-                <element signature="docComment;method#Node#0;class#Node#0" />
-                <element signature="method#Node#0;class#Node#0" />
-                <element signature="e#421#422#0" expanded="true" />
-                <element signature="e#454#455#0" expanded="true" />
-                <element signature="e#483#484#0" expanded="true" />
-                <element signature="e#512#513#0" expanded="true" />
-                <element signature="e#539#540#0" expanded="true" />
-                <element signature="e#571#572#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Game/GameManager.java">
+        <entry file="file://$PROJECT_DIR$/src/Output.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="94">
-              <caret line="68" column="28" selection-start-line="68" selection-start-column="28" selection-end-line="68" selection-end-column="28" />
+            <state relative-caret-position="289">
+              <caret line="34" column="74" selection-start-line="34" selection-start-column="74" selection-end-line="34" selection-end-column="74" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="docComment;class#GameManager#0" />
-                <element signature="docComment;method#GameManager#0;class#GameManager#0" />
-                <element signature="method#GameManager#0;class#GameManager#0" />
-                <element signature="docComment;method#inputAlgorithm#0;class#GameManager#0" />
-                <element signature="method#inputAlgorithm#0;class#GameManager#0" />
-                <element signature="docComment;method#inputSize#0;class#GameManager#0" />
-                <element signature="method#inputSize#0;class#GameManager#0" />
-                <element signature="docComment;method#inputInitialBoard#0;class#GameManager#0" />
-                <element signature="docComment;method#inputTranslate#0;class#GameManager#0" />
-                <element signature="method#inputTranslate#0;class#GameManager#0" />
-                <element signature="method#goalBoardGenerator#0;class#GameManager#0" />
-                <element signature="docComment;method#run#0;class#GameManager#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Game/Board.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="41">
-              <caret line="34" column="4" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="4" />
-              <folding>
-                <element signature="docComment;class#Board#0" />
-                <element signature="docComment;method#Board#0;class#Board#0" />
-                <element signature="docComment;method#getBoard#0;class#Board#0" />
-                <element signature="e#576#577#0" expanded="true" />
-                <element signature="e#604#605#0" expanded="true" />
-                <element signature="docComment;method#boardGenerator#0;class#Board#0" />
-                <element signature="docComment;method#isEqual#0;class#Board#0" />
-                <element signature="method#isEqual#0;class#Board#0" />
+                <element signature="docComment;class#Output#0" />
+                <element signature="docComment;method#Output#0;class#Output#0" />
+                <element signature="method#Output#0;class#Output#0" />
+                <element signature="docComment;method#getPath#0;class#Output#0" />
+                <element signature="docComment;method#getNodesAmount#0;class#Output#0" />
               </folding>
             </state>
           </provider>
@@ -146,6 +92,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>SetBoardMatrix</find>
+      <find>prio</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -159,24 +106,37 @@
         <option value="$PROJECT_DIR$/src/Main/main.java" />
         <option value="$PROJECT_DIR$/src/Tools/FileExtractor.java" />
         <option value="$PROJECT_DIR$/src/Tools/Move.java" />
-        <option value="$PROJECT_DIR$/src/Game/Board.java" />
-        <option value="$PROJECT_DIR$/src/SearchAlgorithms/SearchAlgorithm.java" />
-        <option value="$PROJECT_DIR$/src/SearchAlgorithms/AStar.java" />
-        <option value="$PROJECT_DIR$/src/SearchAlgorithms/IDS.java" />
         <option value="$PROJECT_DIR$/src/Tools/InputTranslator.java" />
-        <option value="$PROJECT_DIR$/src/Tools/Node.java" />
-        <option value="$PROJECT_DIR$/src/Main/Main.java" />
         <option value="$PROJECT_DIR$/src/Tools/OutputGenerator.java" />
-        <option value="$PROJECT_DIR$/src/SearchAlgorithms/BFS.java" />
-        <option value="$PROJECT_DIR$/src/Tools/Output.java" />
         <option value="$PROJECT_DIR$/src/Game/GameManager.java" />
+        <option value="$PROJECT_DIR$/src/Tools/Output.java" />
+        <option value="$PROJECT_DIR$/src/SearchAlgorithms/SearchAlgorithm.java" />
+        <option value="$PROJECT_DIR$/src/SearchAlgorithms/IDS.java" />
+        <option value="$PROJECT_DIR$/src/SearchAlgorithms/AStar.java" />
+        <option value="$PROJECT_DIR$/src/Main/Main.java" />
+        <option value="$PROJECT_DIR$/src/Tools/INode.java" />
+        <option value="$PROJECT_DIR$/src/Game/Board.java" />
+        <option value="$PROJECT_DIR$/src/Tools/Node.java" />
+        <option value="$PROJECT_DIR$/src/SearchAlgorithms/BFS.java" />
+        <option value="$PROJECT_DIR$/src/BFS.java" />
+        <option value="$PROJECT_DIR$/src/AStar.java" />
+        <option value="$PROJECT_DIR$/src/IDS.java" />
+        <option value="$PROJECT_DIR$/src/Board.java" />
+        <option value="$PROJECT_DIR$/src/FileExtractor.java" />
+        <option value="$PROJECT_DIR$/src/GameManager.java" />
+        <option value="$PROJECT_DIR$/src/InputTranslator.java" />
+        <option value="$PROJECT_DIR$/src/java_ex1.java" />
+        <option value="$PROJECT_DIR$/src/Node.java" />
+        <option value="$PROJECT_DIR$/src/SearchAlgorithm.java" />
+        <option value="$PROJECT_DIR$/src/OutputGenerator.java" />
+        <option value="$PROJECT_DIR$/src/Output.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="15" />
-    <option name="y" value="30" />
-    <option name="width" value="1890" />
+    <option name="x" value="355" />
+    <option name="y" value="-17" />
+    <option name="width" value="1080" />
     <option name="height" value="930" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -200,30 +160,6 @@
               <item name="EX1XPuzzle" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="EX1XPuzzle" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EX1XPuzzle" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Game" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="EX1XPuzzle" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EX1XPuzzle" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="EX1XPuzzle" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EX1XPuzzle" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="SearchAlgorithms" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="EX1XPuzzle" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EX1XPuzzle" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Tools" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -232,7 +168,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542404465374" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542742030990" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -250,13 +186,13 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main.Main" />
+    <configuration name="java_ex1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="java_ex1" />
       <module name="EX1XPuzzle" />
       <option name="PROGRAM_PARAMETERS" value="C:\Users\משתמש\Desktop\input.txt" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Main.*" />
+          <option name="PATTERN" value=".*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -266,7 +202,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.java_ex1" />
       </list>
     </recent_temporary>
   </component>
@@ -302,7 +238,14 @@
       <option name="project" value="LOCAL" />
       <updated>1542396159330</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Done wrapping the game. All that's left is to write the algorithms.">
+      <created>1542404482351</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1542404482351</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TodoView">
@@ -318,7 +261,7 @@
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17651822" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17651822" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -328,14 +271,14 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.3291815" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39679715" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.5338078" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3291815" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Messages" order="10" visible="true" weight="0.3291815" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.3291815" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -384,43 +327,7 @@
     <MESSAGE value="Done wrapping the game. All that's left is to write the algorithms." />
     <option name="LAST_COMMIT_MESSAGE" value="Done wrapping the game. All that's left is to write the algorithms." />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Game/GameManager.java</url>
-          <line>85</line>
-          <properties />
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/SearchAlgorithms/AStar.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="34" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#173#174#0" expanded="true" />
-            <element signature="e#220#221#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SearchAlgorithms/IDS.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="26" lean-forward="true" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#171#172#0" expanded="true" />
-            <element signature="e#218#219#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/lang/String.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="104">
@@ -431,10 +338,126 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Tools/InputTranslator.java">
+    <entry file="file://$PROJECT_DIR$/src/Tools/Path.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="34" column="7" lean-forward="true" selection-start-line="34" selection-start-column="7" selection-end-line="34" selection-end-column="7" />
+        <state relative-caret-position="170">
+          <caret line="10" column="7" lean-forward="true" selection-start-line="8" selection-start-column="4" selection-end-line="10" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/util/PriorityQueue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="117">
+          <caret line="646" selection-start-line="646" selection-end-line="646" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Tools/INode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/IDS.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="docComment;class#IDS#0" />
+            <element signature="docComment;method#execute#0;class#IDS#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AStar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="docComment;class#AStar#0" />
+            <element signature="docComment;method#execute#0;class#AStar#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BFS.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="7" column="45" lean-forward="true" selection-start-line="7" selection-start-column="45" selection-end-line="7" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;class#BFS#0" />
+            <element signature="docComment;method#execute#0;class#BFS#0" />
+            <element signature="method#execute#0;class#BFS#0" />
+            <element signature="docComment;method#algorithm#0;class#BFS#0" />
+            <element signature="method#algorithm#0;class#BFS#0" />
+            <element signature="docComment;method#isGoal#0;class#BFS#0" />
+            <element signature="docComment;method#successors#0;class#BFS#0" />
+            <element signature="method#successors#0;class#BFS#0" />
+            <element signature="docComment;method#generateBoardString#0;class#BFS#0" />
+            <element signature="method#generateBoardString#0;class#BFS#0" />
+            <element signature="docComment;method#pathToGoalCalculator#0;class#BFS#0" />
+            <element signature="method#pathToGoalCalculator#0;class#BFS#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Board.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="63" column="5" selection-start-line="63" selection-start-column="5" selection-end-line="63" selection-end-column="5" />
+          <folding>
+            <element signature="docComment;class#Board#0" />
+            <element signature="docComment;method#Board#0;class#Board#0" />
+            <element signature="method#Board#0;class#Board#0" />
+            <element signature="docComment;method#getBoard#0;class#Board#0" />
+            <element signature="docComment;method#boardGenerator#0;class#Board#0" />
+            <element signature="method#boardGenerator#0;class#Board#0" />
+            <element signature="docComment;method#isEqual#0;class#Board#0" />
+            <element signature="method#isEqual#0;class#Board#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FileExtractor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;class#FileExtractor#0" />
+            <element signature="docComment;method#extract#0;class#FileExtractor#0" />
+            <element signature="method#extract#0;class#FileExtractor#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GameManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
+          <folding>
+            <element signature="docComment;class#GameManager#0" />
+            <element signature="docComment;method#GameManager#0;class#GameManager#0" />
+            <element signature="method#GameManager#0;class#GameManager#0" />
+            <element signature="docComment;method#inputAlgorithm#0;class#GameManager#0" />
+            <element signature="method#inputAlgorithm#0;class#GameManager#0" />
+            <element signature="docComment;method#inputSize#0;class#GameManager#0" />
+            <element signature="method#inputSize#0;class#GameManager#0" />
+            <element signature="docComment;method#inputInitialBoard#0;class#GameManager#0" />
+            <element signature="docComment;method#inputTranslate#0;class#GameManager#0" />
+            <element signature="method#inputTranslate#0;class#GameManager#0" />
+            <element signature="docComment;method#goalBoardGenerator#0;class#GameManager#0" />
+            <element signature="method#goalBoardGenerator#0;class#GameManager#0" />
+            <element signature="docComment;method#run#0;class#GameManager#0" />
+            <element signature="method#run#0;class#GameManager#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/InputTranslator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="49">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="docComment;class#InputTranslator#0" />
@@ -450,58 +473,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/SearchAlgorithms/SearchAlgorithm.java">
+    <entry file="file://$PROJECT_DIR$/src/java_ex1.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="10" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="10" />
+        <state>
           <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Tools/FileExtractor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="33" column="72" lean-forward="true" selection-start-line="33" selection-start-column="12" selection-end-line="33" selection-end-column="72" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;class#FileExtractor#0" />
-            <element signature="docComment;method#extract#0;class#FileExtractor#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Tools/Path.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="7" lean-forward="true" selection-start-line="8" selection-start-column="4" selection-end-line="10" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Tools/Node.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="21" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
-          <folding>
-            <element signature="docComment;method#Node#0;class#Node#0" />
-            <element signature="method#Node#0;class#Node#0" />
-            <element signature="e#421#422#0" expanded="true" />
-            <element signature="e#454#455#0" expanded="true" />
-            <element signature="e#483#484#0" expanded="true" />
-            <element signature="e#512#513#0" expanded="true" />
-            <element signature="e#539#540#0" expanded="true" />
-            <element signature="e#571#572#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="27" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
             <element signature="docComment;class#Main#0" />
             <element signature="docComment;method#main#0;class#Main#0" />
             <element signature="method#main#0;class#Main#0" />
@@ -509,10 +484,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Tools/OutputGenerator.java">
+    <entry file="file://$PROJECT_DIR$/src/Node.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="13" column="73" selection-start-line="13" selection-start-column="73" selection-end-line="13" selection-end-column="73" />
+        <state relative-caret-position="272">
+          <caret line="39" column="4" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="4" />
+          <folding>
+            <element signature="docComment;class#Node#0" />
+            <element signature="docComment;method#Node#0;class#Node#0" />
+            <element signature="method#Node#0;class#Node#0" />
+            <element signature="docComment;method#getStateBoard#0;class#Node#0" />
+            <element signature="docComment;method#getParent#0;class#Node#0" />
+            <element signature="docComment;method#getPath#0;class#Node#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SearchAlgorithm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
+          <folding>
+            <element signature="docComment;class#SearchAlgorithm#0" />
+            <element signature="docComment;method#execute#0;class#SearchAlgorithm#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/OutputGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="docComment;class#OutputGenerator#0" />
@@ -522,63 +523,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Tools/Output.java">
+    <entry file="file://$PROJECT_DIR$/src/Output.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
+        <state relative-caret-position="289">
+          <caret line="34" column="74" selection-start-line="34" selection-start-column="74" selection-end-line="34" selection-end-column="74" />
           <folding>
             <element signature="docComment;class#Output#0" />
             <element signature="docComment;method#Output#0;class#Output#0" />
             <element signature="method#Output#0;class#Output#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SearchAlgorithms/BFS.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="8" column="31" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Game/Board.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="41">
-          <caret line="34" column="4" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="4" />
-          <folding>
-            <element signature="docComment;class#Board#0" />
-            <element signature="docComment;method#Board#0;class#Board#0" />
-            <element signature="docComment;method#getBoard#0;class#Board#0" />
-            <element signature="e#576#577#0" expanded="true" />
-            <element signature="e#604#605#0" expanded="true" />
-            <element signature="docComment;method#boardGenerator#0;class#Board#0" />
-            <element signature="docComment;method#isEqual#0;class#Board#0" />
-            <element signature="method#isEqual#0;class#Board#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Game/GameManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="94">
-          <caret line="68" column="28" selection-start-line="68" selection-start-column="28" selection-end-line="68" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;class#GameManager#0" />
-            <element signature="docComment;method#GameManager#0;class#GameManager#0" />
-            <element signature="method#GameManager#0;class#GameManager#0" />
-            <element signature="docComment;method#inputAlgorithm#0;class#GameManager#0" />
-            <element signature="method#inputAlgorithm#0;class#GameManager#0" />
-            <element signature="docComment;method#inputSize#0;class#GameManager#0" />
-            <element signature="method#inputSize#0;class#GameManager#0" />
-            <element signature="docComment;method#inputInitialBoard#0;class#GameManager#0" />
-            <element signature="docComment;method#inputTranslate#0;class#GameManager#0" />
-            <element signature="method#inputTranslate#0;class#GameManager#0" />
-            <element signature="method#goalBoardGenerator#0;class#GameManager#0" />
-            <element signature="docComment;method#run#0;class#GameManager#0" />
+            <element signature="docComment;method#getPath#0;class#Output#0" />
+            <element signature="docComment;method#getNodesAmount#0;class#Output#0" />
           </folding>
         </state>
       </provider>

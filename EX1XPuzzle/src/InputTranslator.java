@@ -1,13 +1,10 @@
-package Tools;
-import SearchAlgorithms.AStar;
-import SearchAlgorithms.BFS;
-import SearchAlgorithms.IDS;
-import SearchAlgorithms.SearchAlgorithm;
 import java.util.HashMap;
 import java.util.Map;
 
 /**
  * Translates the given input to readable data.
+ * Adapts the algorithm choice to the relevant algorithm class.
+ * Turns String to int whenever necessary.
  */
 public class InputTranslator {
     /* Properties */
@@ -20,6 +17,7 @@ public class InputTranslator {
     /* Constructor */
     /**
      * Constructs a new InputTranslator instance.
+     * @param fPath the path to create the output file int
      */
     public InputTranslator(String fPath){
         filePath = fPath;
