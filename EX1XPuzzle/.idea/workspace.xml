@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bb5e3f14-f8f9-4372-acf2-6d443f6af918" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Algorithm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/IDS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IDS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Node.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,25 +24,25 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="107" />
+          <entry key="java" value="110" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="107" />
+          <entry key="JAVA" value="110" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="4" />
-          <entry key="java" value="14805" />
-          <entry key="txt" value="226" />
+          <entry key="java" value="14905" />
+          <entry key="txt" value="229" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="14805" />
-          <entry key="PLAIN_TEXT" value="230" />
+          <entry key="JAVA" value="14905" />
+          <entry key="PLAIN_TEXT" value="233" />
         </counts>
       </usages-collector>
     </session>
@@ -52,8 +52,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/BFS.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="67" column="5" lean-forward="true" selection-start-line="67" selection-start-column="5" selection-end-line="67" selection-end-column="5" />
+            <state relative-caret-position="391">
+              <caret line="141" column="99" selection-start-line="141" selection-start-column="99" selection-end-line="141" selection-end-column="99" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="docComment;class#BFS#0" />
@@ -76,8 +76,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/IDS.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="82" column="4" selection-start-line="82" selection-start-column="4" selection-end-line="82" selection-end-column="4" />
+            <state relative-caret-position="361">
+              <caret line="187" column="4" selection-start-line="187" selection-start-column="4" selection-end-line="201" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="docComment;class#IDS#0" />
@@ -99,11 +99,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Node.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="51" column="5" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="5" />
+            <state relative-caret-position="374">
+              <caret line="58" column="5" lean-forward="true" selection-start-line="58" selection-start-column="5" selection-end-line="58" selection-end-column="5" />
               <folding>
                 <element signature="docComment;class#Node#0" />
                 <element signature="docComment;method#Node#0;class#Node#0" />
@@ -114,6 +114,28 @@
                 <element signature="docComment;method#getDepth#0;class#Node#0" />
                 <element signature="docComment;method#setDepth#0;class#Node#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/SearchAlgorithm.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="12" column="66" lean-forward="true" selection-start-line="12" selection-start-column="66" selection-end-line="12" selection-end-column="66" />
+              <folding>
+                <element signature="docComment;class#SearchAlgorithm#0" />
+                <element signature="docComment;method#execute#0;class#SearchAlgorithm#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Algorithm.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="13" column="1" lean-forward="true" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -163,12 +185,13 @@
         <option value="$PROJECT_DIR$/src/GameManager.java" />
         <option value="$PROJECT_DIR$/src/InputTranslator.java" />
         <option value="$PROJECT_DIR$/src/java_ex1.java" />
-        <option value="$PROJECT_DIR$/src/SearchAlgorithm.java" />
         <option value="$PROJECT_DIR$/src/OutputGenerator.java" />
         <option value="$PROJECT_DIR$/src/Output.java" />
-        <option value="$PROJECT_DIR$/src/BFS.java" />
         <option value="$PROJECT_DIR$/src/Node.java" />
+        <option value="$PROJECT_DIR$/src/BFS.java" />
         <option value="$PROJECT_DIR$/src/IDS.java" />
+        <option value="$PROJECT_DIR$/src/Algorithm.java" />
+        <option value="$PROJECT_DIR$/src/SearchAlgorithm.java" />
       </list>
     </option>
   </component>
@@ -207,7 +230,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542793699457" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542822631900" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -228,7 +251,7 @@
     <configuration name="java_ex1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="java_ex1" />
       <module name="EX1XPuzzle" />
-      <option name="PROGRAM_PARAMETERS" value="C:\Users\משתמש\Desktop\input2.txt" />
+      <option name="PROGRAM_PARAMETERS" value="C:\Users\משתמש\Desktop\input.txt" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value=".*" />
@@ -291,7 +314,14 @@
       <option name="project" value="LOCAL" />
       <updated>1542742069574</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Added IDS Algorithm">
+      <created>1542793969809</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1542793969809</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TodoView">
@@ -307,7 +337,7 @@
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17651822" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17651822" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -372,7 +402,8 @@
     <MESSAGE value="Added goal node and moved board generating from InputTranslator to Board class." />
     <MESSAGE value="Done wrapping the game. All that's left is to write the algorithms." />
     <MESSAGE value="Added BFS Algorithm" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added BFS Algorithm" />
+    <MESSAGE value="Added IDS Algorithm" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added IDS Algorithm" />
   </component>
   <component name="editorHistoryManager">
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/lang/String.java">
@@ -480,17 +511,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/SearchAlgorithm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
-          <folding>
-            <element signature="docComment;class#SearchAlgorithm#0" />
-            <element signature="docComment;method#execute#0;class#SearchAlgorithm#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/OutputGenerator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -519,28 +539,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/BFS.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="67" column="5" lean-forward="true" selection-start-line="67" selection-start-column="5" selection-end-line="67" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;class#BFS#0" />
-            <element signature="docComment;method#execute#0;class#BFS#0" />
-            <element signature="method#execute#0;class#BFS#0" />
-            <element signature="docComment;method#algorithm#0;class#BFS#0" />
-            <element signature="method#algorithm#0;class#BFS#0" />
-            <element signature="docComment;method#isGoal#0;class#BFS#0" />
-            <element signature="docComment;method#successors#0;class#BFS#0" />
-            <element signature="method#successors#0;class#BFS#0" />
-            <element signature="docComment;method#generateBoardString#0;class#BFS#0" />
-            <element signature="method#generateBoardString#0;class#BFS#0" />
-            <element signature="docComment;method#pathToGoalCalculator#0;class#BFS#0" />
-            <element signature="method#pathToGoalCalculator#0;class#BFS#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/InputTranslator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="49">
@@ -560,10 +558,56 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/BFS.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="141" column="99" selection-start-line="141" selection-start-column="99" selection-end-line="141" selection-end-column="99" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;class#BFS#0" />
+            <element signature="docComment;method#execute#0;class#BFS#0" />
+            <element signature="method#execute#0;class#BFS#0" />
+            <element signature="docComment;method#algorithm#0;class#BFS#0" />
+            <element signature="method#algorithm#0;class#BFS#0" />
+            <element signature="docComment;method#isGoal#0;class#BFS#0" />
+            <element signature="docComment;method#successors#0;class#BFS#0" />
+            <element signature="method#successors#0;class#BFS#0" />
+            <element signature="docComment;method#generateBoardString#0;class#BFS#0" />
+            <element signature="method#generateBoardString#0;class#BFS#0" />
+            <element signature="docComment;method#pathToGoalCalculator#0;class#BFS#0" />
+            <element signature="method#pathToGoalCalculator#0;class#BFS#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Node.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="58" column="5" lean-forward="true" selection-start-line="58" selection-start-column="5" selection-end-line="58" selection-end-column="5" />
+          <folding>
+            <element signature="docComment;class#Node#0" />
+            <element signature="docComment;method#Node#0;class#Node#0" />
+            <element signature="method#Node#0;class#Node#0" />
+            <element signature="docComment;method#getStateBoard#0;class#Node#0" />
+            <element signature="docComment;method#getParent#0;class#Node#0" />
+            <element signature="docComment;method#getPath#0;class#Node#0" />
+            <element signature="docComment;method#getDepth#0;class#Node#0" />
+            <element signature="docComment;method#setDepth#0;class#Node#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Algorithm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="1" lean-forward="true" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/IDS.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="82" column="4" selection-start-line="82" selection-start-column="4" selection-end-line="82" selection-end-column="4" />
+        <state relative-caret-position="361">
+          <caret line="187" column="4" selection-start-line="187" selection-start-column="4" selection-end-line="201" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="docComment;class#IDS#0" />
@@ -584,19 +628,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Node.java">
+    <entry file="file://$PROJECT_DIR$/src/SearchAlgorithm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="51" column="5" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="5" />
+        <state relative-caret-position="51">
+          <caret line="12" column="66" lean-forward="true" selection-start-line="12" selection-start-column="66" selection-end-line="12" selection-end-column="66" />
           <folding>
-            <element signature="docComment;class#Node#0" />
-            <element signature="docComment;method#Node#0;class#Node#0" />
-            <element signature="method#Node#0;class#Node#0" />
-            <element signature="docComment;method#getStateBoard#0;class#Node#0" />
-            <element signature="docComment;method#getParent#0;class#Node#0" />
-            <element signature="docComment;method#getPath#0;class#Node#0" />
-            <element signature="docComment;method#getDepth#0;class#Node#0" />
-            <element signature="docComment;method#setDepth#0;class#Node#0" />
+            <element signature="docComment;class#SearchAlgorithm#0" />
+            <element signature="docComment;method#execute#0;class#SearchAlgorithm#0" />
           </folding>
         </state>
       </provider>

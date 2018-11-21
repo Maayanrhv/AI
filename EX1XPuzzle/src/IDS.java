@@ -8,9 +8,9 @@ import java.util.Stack;
  */
 public class IDS implements SearchAlgorithm {
     /* Properties */
-    Board goal;
-    int developedNodes = 0;
-    int limit = -1;
+    private Board goal;
+    private int developedNodes = 0;
+    private int limit = -1;
 
     /* Methods */
     /**
@@ -106,21 +106,13 @@ public class IDS implements SearchAlgorithm {
         for(int i=0; i<size; i++){
             for (int j=0; j<size; j++){
                 if(board.getBoard()[i][j] == 0){
-                    //if Up move is valid - create the relevant new node
-                    if(i<size-1){
-                        String boardValues = generateBoardString(board, size, i, j, i+1, j);
-                        tempBoardU.boardGenerator(boardValues);
-                        upNode = new Node(tempBoardU, parentNode, "U");
-                        upNode.setDepth(parentNode.getDepth()+1);
-                        adjacent.add(upNode);
-                    }
-                    //if Down move is valid - create the relevant new node
-                    if(i>0){
-                        String boardValues = generateBoardString(board, size, i, j, i-1, j);
-                        tempBoardD.boardGenerator(boardValues);
-                        downNode = new Node(tempBoardD, parentNode, "D");
-                        downNode.setDepth(parentNode.getDepth()+1);
-                        adjacent.add(downNode);
+                    //if Right move is valid - create the relevant new node
+                    if(j>0){
+                        String boardValues = generateBoardString(board, size, i, j, i, j-1);
+                        tempBoardR.boardGenerator(boardValues);
+                        rightNode = new Node(tempBoardR, parentNode, "R");
+                        rightNode.setDepth(parentNode.getDepth()+1);
+                        adjacent.add(rightNode);
                     }
                     //if Left move is valid - create the relevant new node
                     if(j<size-1){
@@ -130,13 +122,21 @@ public class IDS implements SearchAlgorithm {
                         leftNode.setDepth(parentNode.getDepth()+1);
                         adjacent.add(leftNode);
                     }
-                    //if Right move is valid - create the relevant new node
-                    if(j>0){
-                        String boardValues = generateBoardString(board, size, i, j, i, j-1);
-                        tempBoardR.boardGenerator(boardValues);
-                        rightNode = new Node(tempBoardR, parentNode, "R");
-                        rightNode.setDepth(parentNode.getDepth()+1);
-                        adjacent.add(rightNode);
+                    //if Down move is valid - create the relevant new node
+                    if(i>0){
+                        String boardValues = generateBoardString(board, size, i, j, i-1, j);
+                        tempBoardD.boardGenerator(boardValues);
+                        downNode = new Node(tempBoardD, parentNode, "D");
+                        downNode.setDepth(parentNode.getDepth()+1);
+                        adjacent.add(downNode);
+                    }
+                    //if Up move is valid - create the relevant new node
+                    if(i<size-1){
+                        String boardValues = generateBoardString(board, size, i, j, i+1, j);
+                        tempBoardU.boardGenerator(boardValues);
+                        upNode = new Node(tempBoardU, parentNode, "U");
+                        upNode.setDepth(parentNode.getDepth()+1);
+                        adjacent.add(upNode);
                     }
                     break;
                 }
