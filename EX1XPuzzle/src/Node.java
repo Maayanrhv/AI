@@ -9,6 +9,7 @@ public class Node {
     private Board stateBoard;
     private Node parent;
     private String oneMove;
+    private int depth = -1;
 
     /* Constructor */
     /**
@@ -42,5 +43,18 @@ public class Node {
      */
     public String getPath(){
         return oneMove;
+    }
+    /**
+     * @return this node's depth
+     */
+    public int getDepth(){
+        return depth;
+    }
+    /**
+     * sets the node's depth when necessary.
+     * @param d the depth to set to the node
+     */
+    public void setDepth(int d){
+        depth = d;
     }
 }
