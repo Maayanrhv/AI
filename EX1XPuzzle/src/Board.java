@@ -24,6 +24,12 @@ public class Board {
     public int[][] getBoard(){
         return board;
     }
+    /**
+     * @return the board's size
+     */
+    public int getSize(){
+        return size;
+    }
 
     /* Methods */
     /**

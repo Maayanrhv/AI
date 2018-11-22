@@ -57,4 +57,35 @@ public class Node {
     public void setDepth(int d){
         depth = d;
     }
+
+    // relevant for A* algorithm
+    public int f(Board goalState){
+        return g()+h(goalState);
+    }
+    public int g(){
+        return depth;
+    }
+    public int h(Board goalState){
+        int size = stateBoard.getSize();
+        int[][] goalBoard = goalState.getBoard();
+        int[][] currentBoard = stateBoard.getBoard();
+        int heuristicCalc = 0;
+        int k=0,xTarget,yTarget;
+        for (int i=0; i<size; i++){
+            for (int j=0; j<size; j++){
+                int currentValue = currentBoard[i][j];
+                if(currentValue!=0 && currentValue!=goalBoard[i][j]){
+                    //calculating where currentValue is targeted to be
+                    // in the goal state.
+                    xTarget=(currentValue-1)/size;
+                    yTarget=(currentValue-1)%size;
+                    //calculating the distances between
+                    //current x & y and the target x & y.
+                    //and the result is added to the heuristic value calculated.
+                    heuristicCalc+=Math.abs(xTarget-i)+Math.abs(yTarget-j);
+                }
+            }
+        }
+        return heuristicCalc;
+    }
 }
