@@ -1,3 +1,5 @@
+import java.util.Date;
+
 /**
  * Represents a possible state of the game.
  * Node contains a possible Board (game state),
@@ -10,6 +12,8 @@ public class Node {
     private Node parent;
     private String oneMove;
     private int depth = -1;
+    private int rank;
+    private long time;
 
     /* Constructor */
     /**
@@ -23,6 +27,7 @@ public class Node {
         stateBoard = b;
         parent = n;
         oneMove = path;
+        setRank();
     }
 
     /* Getters & Setters */
@@ -51,26 +56,73 @@ public class Node {
         return depth;
     }
     /**
+     * @return this node's rank
+     */
+    public int getRank(){
+        return rank;
+    }
+    /**
+     * @return this node's developing time
+     */
+    public long getTime(){
+        return time;
+    }
+    /**
      * sets the node's depth when necessary.
      * @param d the depth to set to the node
      */
     public void setDepth(int d){
         depth = d;
     }
+    /**
+     * sets the rank of this node.
+     * U gets the highest ranking and R the lowest ranking.
+     * Therefore, U has higher priority over R.
+     */
+    private void setRank(){
+        if("U".equals(oneMove)) rank = 4;
+        else if("D".equals(oneMove)) rank = 3;
+        else if("L".equals(oneMove)) rank = 2;
+        else if("R".equals(oneMove)) rank = 1;
+    }
+    /**
+     * sets the developing time.
+     * @param whenNodeDeveloped the time this node was developed.
+     */
+    public void setTime(long whenNodeDeveloped){
+        time = whenNodeDeveloped;
+    }
 
+    /* Methods */
     // relevant for A* algorithm
+    /**
+     * f function = g + h
+     * @param goalState the goal board
+     * @return g + h
+     */
     public int f(Board goalState){
         return g()+h(goalState);
     }
+    /**
+     * g function - calculates the cost to reach this node.
+     * In this exercise, g is the node's depth.
+     * @return this node's depth
+     */
     public int g(){
         return depth;
     }
-    public int h(Board goalState){
+    /**
+     * h function - the heuristic function.
+     * h - Manhattan distance
+     * @param goalState the goal board
+     * @return the (goal_X_coordinate - current_X-coordinate)+(goal_Y_coordinate - current_Y-coordinate)
+     */
+    private int h(Board goalState){
         int size = stateBoard.getSize();
         int[][] goalBoard = goalState.getBoard();
         int[][] currentBoard = stateBoard.getBoard();
         int heuristicCalc = 0;
-        int k=0,xTarget,yTarget;
+        int xTarget,yTarget;
         for (int i=0; i<size; i++){
             for (int j=0; j<size; j++){
                 int currentValue = currentBoard[i][j];
