@@ -9,7 +9,7 @@ public class Node {
     private Board stateBoard;
     private Node parent;
     private String oneMove;
-    private int depth = -1;
+    private int depth = 0;
     private int rank;
     private long time;
 
