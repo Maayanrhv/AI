@@ -10,6 +10,9 @@ public class java_ex1 {
      */
     public static void main(String[] args) {
         String[] input = FileExtractor.extract(args[0]);
+        for (int i=0;i<input.length;i++){
+            input[i] = input[i].replaceAll(" ","");
+        }
         int i = args[0].lastIndexOf('\\');
         String filePath = args[0].substring(0, i);
         GameManager gameManager = new GameManager(input,filePath);
