@@ -1,5 +1,3 @@
-import java.util.Date;
-
 /**
  * Represents a possible state of the game.
  * Node contains a possible Board (game state),

@@ -11,6 +11,7 @@ public class SearchAlgorithm {
     protected int developedNodes = 0;
     protected int limit = -1;
 
+    /* Methods */
     /**
      * Executes the algorithm run as a part of the game.
      * @param size the board size in the game
