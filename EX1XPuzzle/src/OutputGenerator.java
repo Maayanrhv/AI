@@ -1,6 +1,6 @@
 import java.io.FileWriter;
-import java.io.PrintWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 /**
  * Generates an output file in a given directory path.
@@ -10,11 +10,11 @@ public class OutputGenerator {
     /**
      * Generates an output file.
      * @param output the output data to add to the file.
-     * @param filePath the output directory
      */
-    public static void generateOutputFile(Output output, String filePath){
+    public static void generateOutputFile(Output output){
+        String filePath = "output.txt";
         try {
-            FileWriter fw = new FileWriter(filePath+"\\output.txt");
+            FileWriter fw = new FileWriter(filePath);
             PrintWriter pw = new PrintWriter(fw);
             pw.print(output.getPath());
             pw.print(" ");

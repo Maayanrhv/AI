@@ -12,15 +12,12 @@ public class InputTranslator {
     private AStar aStar;
     private IDS ids;
     private Map<Integer, SearchAlgorithm> algorithmTypes = new HashMap<>();
-    private String filePath;
 
     /* Constructor */
     /**
      * Constructs a new InputTranslator instance.
-     * @param fPath the path to create the output file int
      */
-    public InputTranslator(String fPath){
-        filePath = fPath;
+    public InputTranslator(){
         bfs = new BFS();
         aStar = new AStar();
         ids = new IDS();
@@ -43,12 +40,6 @@ public class InputTranslator {
      */
     public SearchAlgorithm getAlgorithm(int key){
         return algorithmTypes.get(key);
-    }
-    /**
-     * @return the input file's path.
-     */
-    public String getFilePath(){
-        return filePath;
     }
 
     /* Methods */

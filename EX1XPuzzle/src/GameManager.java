@@ -18,8 +18,8 @@ public class GameManager {
      * @param inputPath the directory of the input file
      *                  to create the output file in
      */
-    public GameManager(String[] input, String inputPath){
-        it = new InputTranslator(inputPath);
+    public GameManager(String[] input){
+        it = new InputTranslator();
         inputTranslate(input);
         goalBoardGenerator();
     }
@@ -80,6 +80,6 @@ public class GameManager {
      */
     public void run(){
         Output output = algorithm.execute(boardSize, initialBoard, goalBoard);
-        OutputGenerator.generateOutputFile(output, it.getFilePath());
+        OutputGenerator.generateOutputFile(output);
     }
 }
