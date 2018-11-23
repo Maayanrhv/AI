@@ -1,6 +1,10 @@
 import java.util.LinkedList;
 import java.util.Queue;
 
+/**
+ * A parent class to all algorithms.
+ * Contains common methods.
+ */
 public class SearchAlgorithm {
     /* Properties */
     protected Board goal;
