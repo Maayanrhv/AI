@@ -4,7 +4,6 @@
     <list default="true" id="bb5e3f14-f8f9-4372-acf2-6d443f6af918" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/input.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Node.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,38 +16,39 @@
     <session id="450038444">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
-          <entry key="project.open.time.13" value="1" />
+          <entry key="project.closed" value="5" />
+          <entry key="project.open.time.12" value="1" />
+          <entry key="project.open.time.13" value="2" />
           <entry key="project.open.time.15" value="1" />
           <entry key="project.open.time.28" value="1" />
           <entry key="project.open.time.3" value="1" />
-          <entry key="project.opened" value="4" />
+          <entry key="project.opened" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="input" value="2" />
-          <entry key="java" value="164" />
-          <entry key="txt" value="7" />
+          <entry key="java" value="167" />
+          <entry key="txt" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="164" />
-          <entry key="PLAIN_TEXT" value="9" />
+          <entry key="JAVA" value="167" />
+          <entry key="PLAIN_TEXT" value="13" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="15" />
           <entry key="java" value="19098" />
-          <entry key="txt" value="516" />
+          <entry key="txt" value="548" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JAVA" value="19098" />
-          <entry key="PLAIN_TEXT" value="531" />
+          <entry key="PLAIN_TEXT" value="563" />
         </counts>
       </usages-collector>
     </session>
@@ -56,55 +56,19 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AStar.java">
+        <entry file="file://$PROJECT_DIR$/input.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="38">
-              <caret line="76" column="21" selection-start-line="76" selection-start-column="12" selection-end-line="76" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/SearchAlgorithm.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2441">
-              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+            <state>
+              <caret column="1" selection-start-column="1" selection-end-column="1" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/input.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/output.txt">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/java_ex1.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="142">
-              <caret line="11" selection-start-line="11" selection-end-line="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Node.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="25" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
-              <folding>
-                <element signature="docComment;method#setRank#0;class#Node#0" />
-                <element signature="method#setRank#0;class#Node#0" />
-              </folding>
+            <state>
+              <caret column="5" selection-start-column="5" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -208,12 +172,12 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542994789653" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542995599039" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -363,7 +327,14 @@
       <option name="project" value="LOCAL" />
       <updated>1542992076149</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Bug fix for node's depth">
+      <created>1542994874377</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1542994874377</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TodoView">
@@ -377,9 +348,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49822065" visible="true" weight="0.18299595" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49822065" visible="true" weight="0.18947369" />
       <window_info id="Structure" order="1" sideWeight="0.5017794" side_tool="true" weight="0.17975709" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -388,7 +358,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3291815" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3113879" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3113879" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.5338078" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -452,7 +422,8 @@
     <MESSAGE value="Added comments" />
     <MESSAGE value="Trimming te input strings" />
     <MESSAGE value="Receiving input from upper directory (and not as a parameter)." />
-    <option name="LAST_COMMIT_MESSAGE" value="Receiving input from upper directory (and not as a parameter)." />
+    <MESSAGE value="Bug fix for node's depth" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bug fix for node's depth" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -470,112 +441,22 @@
           <option name="timeStamp" value="146" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/AStar.java</url>
-          <line>51</line>
+          <url>file://$PROJECT_DIR$/src/IDS.java</url>
+          <line>67</line>
           <properties />
-          <option name="timeStamp" value="148" />
+          <option name="timeStamp" value="168" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/AStar.java</url>
-          <line>53</line>
+          <url>file://$PROJECT_DIR$/src/IDS.java</url>
+          <line>73</line>
           <properties />
-          <option name="timeStamp" value="150" />
+          <option name="timeStamp" value="169" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/AStar.java</url>
-          <line>65</line>
+          <url>file://$PROJECT_DIR$/src/IDS.java</url>
+          <line>74</line>
           <properties />
-          <option name="timeStamp" value="151" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/AStar.java</url>
-          <line>55</line>
-          <properties />
-          <option name="timeStamp" value="152" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/AStar.java</url>
-          <line>58</line>
-          <properties />
-          <option name="timeStamp" value="153" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/AStar.java</url>
-          <line>56</line>
-          <properties />
-          <option name="timeStamp" value="155" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/AStar.java</url>
-          <line>57</line>
-          <properties />
-          <option name="timeStamp" value="156" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/AStar.java</url>
-          <line>54</line>
-          <properties />
-          <option name="timeStamp" value="157" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/AStar.java</url>
-          <line>52</line>
-          <properties />
-          <option name="timeStamp" value="158" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/AStar.java</url>
-          <line>61</line>
-          <properties />
-          <option name="timeStamp" value="159" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/AStar.java</url>
-          <line>63</line>
-          <properties />
-          <option name="timeStamp" value="160" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/AStar.java</url>
-          <line>62</line>
-          <properties />
-          <option name="timeStamp" value="161" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/AStar.java</url>
-          <line>64</line>
-          <properties />
-          <option name="timeStamp" value="162" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/AStar.java</url>
-          <line>71</line>
-          <properties />
-          <option name="timeStamp" value="163" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/AStar.java</url>
-          <line>72</line>
-          <properties />
-          <option name="timeStamp" value="164" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/AStar.java</url>
-          <line>75</line>
-          <properties />
-          <option name="timeStamp" value="165" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/AStar.java</url>
-          <line>76</line>
-          <properties />
-          <option name="timeStamp" value="166" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/AStar.java</url>
-          <line>78</line>
-          <properties />
-          <option name="timeStamp" value="167" />
+          <option name="timeStamp" value="170" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -585,9 +466,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="104">
           <caret line="622" selection-start-line="622" selection-end-line="622" />
-          <folding>
-            <element signature="e#22821#22822#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -606,185 +484,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="343" selection-start-line="343" selection-end-line="343" />
-          <folding>
-            <element signature="e#13242#13800#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AStar.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="84" column="4" selection-start-line="84" selection-start-column="4" selection-end-line="84" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;class#AStar#0" />
-            <element signature="docComment;method#execute#0;class#AStar#0" />
-            <element signature="method#execute#0;class#AStar#0" />
-            <element signature="docComment;method#algorithm#0;class#AStar#0" />
-            <element signature="method#algorithm#0;class#AStar#0" />
-            <element signature="e#1519#1816#0" />
-            <element signature="docComment;method#setNodesDevelopingTime#0;class#AStar#0" />
-            <element signature="method#setNodesDevelopingTime#0;class#AStar#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/BFS.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="38" column="5" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;class#BFS#0" />
-            <element signature="docComment;method#algorithm#0;class#BFS#0" />
-            <element signature="method#algorithm#0;class#BFS#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/IDS.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="62" column="48" selection-start-line="62" selection-start-column="48" selection-end-line="62" selection-end-column="48" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;class#IDS#0" />
-            <element signature="docComment;method#execute#0;class#IDS#0" />
-            <element signature="method#execute#0;class#IDS#0" />
-            <element signature="docComment;method#algorithm#0;class#IDS#0" />
-            <element signature="method#algorithm#0;class#IDS#0" />
-            <element signature="docComment;method#DFS#0;class#IDS#0" />
-            <element signature="method#DFS#0;class#IDS#0" />
-            <element signature="docComment;method#successors#0;class#IDS#0" />
-            <element signature="method#successors#0;class#IDS#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Node.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-319">
-          <folding>
-            <element signature="docComment;class#Node#0" />
-            <element signature="docComment;method#Node#0;class#Node#0" />
-            <element signature="method#Node#0;class#Node#0" />
-            <element signature="docComment;method#getStateBoard#0;class#Node#0" />
-            <element signature="docComment;method#getParent#0;class#Node#0" />
-            <element signature="docComment;method#getPath#0;class#Node#0" />
-            <element signature="docComment;method#getDepth#0;class#Node#0" />
-            <element signature="docComment;method#getRank#0;class#Node#0" />
-            <element signature="docComment;method#getTime#0;class#Node#0" />
-            <element signature="docComment;method#setDepth#0;class#Node#0" />
-            <element signature="docComment;method#setRank#0;class#Node#0" />
-            <element signature="method#setRank#0;class#Node#0" />
-            <element signature="docComment;method#setTime#0;class#Node#0" />
-            <element signature="docComment;method#f#0;class#Node#0" />
-            <element signature="docComment;method#g#0;class#Node#0" />
-            <element signature="docComment;method#h#0;class#Node#0" />
-            <element signature="method#h#0;class#Node#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SearchAlgorithm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;class#SearchAlgorithm#0" />
-            <element signature="docComment;method#execute#0;class#SearchAlgorithm#0" />
-            <element signature="method#execute#0;class#SearchAlgorithm#0" />
-            <element signature="docComment;method#algorithm#0;class#SearchAlgorithm#0" />
-            <element signature="docComment;method#isGoal#0;class#SearchAlgorithm#0" />
-            <element signature="docComment;method#generateBoardString#0;class#SearchAlgorithm#0" />
-            <element signature="method#generateBoardString#0;class#SearchAlgorithm#0" />
-            <element signature="docComment;method#pathToGoalCalculator#0;class#SearchAlgorithm#0" />
-            <element signature="method#pathToGoalCalculator#0;class#SearchAlgorithm#0" />
-            <element signature="docComment;method#successors#0;class#SearchAlgorithm#0" />
-            <element signature="method#successors#0;class#SearchAlgorithm#0" />
-            <element signature="docComment;method#setDepths#0;class#SearchAlgorithm#0" />
-            <element signature="method#setDepths#0;class#SearchAlgorithm#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Board.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="16" column="36" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
-          <folding>
-            <element signature="docComment;class#Board#0" />
-            <element signature="docComment;method#Board#0;class#Board#0" />
-            <element signature="docComment;method#getBoard#0;class#Board#0" />
-            <element signature="docComment;method#getSize#0;class#Board#0" />
-            <element signature="docComment;method#boardGenerator#0;class#Board#0" />
-            <element signature="method#boardGenerator#0;class#Board#0" />
-            <element signature="docComment;method#isEqual#0;class#Board#0" />
-            <element signature="method#isEqual#0;class#Board#0" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/input" />
-    <entry file="file://$PROJECT_DIR$/src/InputTranslator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="43" column="26" selection-start-line="43" selection-start-column="26" selection-end-line="43" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;class#InputTranslator#0" />
-            <element signature="docComment;method#InputTranslator#0;class#InputTranslator#0" />
-            <element signature="method#InputTranslator#0;class#InputTranslator#0" />
-            <element signature="docComment;method#setDictionary#0;class#InputTranslator#0" />
-            <element signature="method#setDictionary#0;class#InputTranslator#0" />
-            <element signature="docComment;method#getAlgorithm#0;class#InputTranslator#0" />
-            <element signature="docComment;method#getFilePath#0;class#InputTranslator#0" />
-            <element signature="docComment;method#StringToIntParser#0;class#InputTranslator#0" />
-            <element signature="method#StringToIntParser#0;class#InputTranslator#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/OutputGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;class#OutputGenerator#0" />
-            <element signature="docComment;method#generateOutputFile#0;class#OutputGenerator#0" />
-            <element signature="method#generateOutputFile#0;class#OutputGenerator#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/java_ex1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-          <folding>
-            <element signature="docComment;class#java_ex1#0" />
-            <element signature="docComment;method#main#0;class#java_ex1#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/out/production/EX1XPuzzle/input.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/FileExtractor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="16" column="41" selection-start-line="16" selection-start-column="41" selection-end-line="16" selection-end-column="41" />
-          <folding>
-            <element signature="docComment;class#FileExtractor#0" />
-            <element signature="docComment;method#extract#0;class#FileExtractor#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/out/production/EX1XPuzzle/input.txt" />
     <entry file="file://$PROJECT_DIR$/src/BFS.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -796,13 +500,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/IDS.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -827,13 +524,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/InputTranslator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="42" column="5" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/OutputGenerator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -848,6 +538,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/AStar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="429">
+          <caret line="76" column="21" selection-start-line="76" selection-start-column="12" selection-end-line="76" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SearchAlgorithm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Node.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -859,27 +563,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AStar.java">
+    <entry file="file://$PROJECT_DIR$/src/IDS.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="76" column="21" selection-start-line="76" selection-start-column="12" selection-end-line="76" selection-end-column="21" />
+        <state relative-caret-position="1139">
+          <caret line="74" selection-start-line="74" selection-end-line="74" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/SearchAlgorithm.java">
+    <entry file="file://$PROJECT_DIR$/src/InputTranslator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2441">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        <state relative-caret-position="272">
+          <caret line="42" column="5" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/input.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="1" selection-start-column="1" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/output.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/input.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        <state>
+          <caret column="5" selection-start-column="5" selection-end-column="5" />
         </state>
       </provider>
     </entry>
