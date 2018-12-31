@@ -10,6 +10,7 @@ public class ID3 {
     /* Properties */
     private Data data;
     private TestData testData;
+    public double algPredictionPercentage;
 
     /* Constructors */
     /**

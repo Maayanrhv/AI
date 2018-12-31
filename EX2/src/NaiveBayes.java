@@ -10,6 +10,7 @@ public class NaiveBayes {
     /* Properties */
     private Data data;
     private TestData testData;
+    public double algPredictionPercentage;
 
     /* Constructors */
     /**

@@ -108,9 +108,9 @@ public class TrainDataExtractor {
                     trainRow.setValues(values);
                     // adding to trainRow the row number (this row index in train.txt)
                     trainRow.setRowNumber(rowsCount);
-                    // adding to row its classification
+                    // adding to trainRow its classification
                     trainRow.setClassification(attributesValues[i]);
-                    // adding this row to trainRows ArrayList
+                    // adding this trainRow to trainRows ArrayList
                     trainRows.add(trainRow);
                 }
                 input.add(line);

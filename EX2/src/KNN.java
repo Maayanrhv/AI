@@ -12,6 +12,7 @@ public class KNN {
     private int k;
     private Data data;
     private TestData testData;
+    public double algPredictionPercentage;
 
     /* Constructors */
     /**
@@ -68,6 +69,8 @@ public class KNN {
             predictedClassifications.put(testRow.getRowNumber(), predictedClass);
         }
 
+        // calculate KNN's accuracy percentage.
+        percentageCalc(predictedClassifications);
         return predictedClassifications;
     }
 
@@ -77,7 +80,7 @@ public class KNN {
      * @param trainRow second row
      * @return the Hamming distance between these 2 rows.
      */
-    public int findHammingDistance(Row testRow, Row trainRow){
+    private int findHammingDistance(Row testRow, Row trainRow){
         int hammingDistance = 0;
 
         for (Map.Entry<Integer, String> aAtt : data.getAttributesPositions().entrySet()) {
@@ -99,7 +102,7 @@ public class KNN {
      *                        frequent classification value in.
      * @return the predicted classification value.
      */
-    public String predictClassification(ArrayList<rowInfo> kClosestRowsInfo){
+    private String predictClassification(ArrayList<rowInfo> kClosestRowsInfo){
         // a map that holds the amount of each classification value in kClosestRowsInfo array
         //      String - key - the classification value
         //      Integer - value - the amount of time this classification value appears kClosestRowsInfo array
@@ -121,6 +124,25 @@ public class KNN {
         }
 
         return predictedClass;
+    }
+
+    /**
+     * Calculates this algorithm's amount of correct predictions
+     * in relation to all predictions (the amount of test rows).
+     * The calculated value is put in algPredictionPercentage property.
+     * @param predictedClassifications the predicted classifications
+     */
+    public void percentageCalc(Map<Integer,String> predictedClassifications){
+        int testRowsAmount = testData.getTestRows().size();
+        int corrPredictAmount = 0;
+        for (Map.Entry<Integer, String> aRow : predictedClassifications.entrySet()) {
+            String prediction = aRow.getValue();
+            String corrClass = testData.getTestRows().get(aRow.getKey()-1).getClassification();
+            if(prediction.equals(corrClass)){
+                corrPredictAmount++;
+            }
+        }
+        algPredictionPercentage = (double)(corrPredictAmount)/(double) (testRowsAmount);
     }
 }
 

@@ -12,13 +12,20 @@ public class Output {
     private Map<Integer,String> NaiveBayesPredictions;
     private Map<Integer,String> ID3Predictions;
     private int rowCount;
+    private double KNNPredictionPercentage;
+    private double NaiveBayesPredictionPercentage;
+    private double ID3PredictionPercentage;
 
     /* Constructor */
-    public Output(Map<Integer,String> KNN, Map<Integer,String> NaiveBayes, Map<Integer,String> ID3){
+    public Output(Map<Integer,String> KNN, Map<Integer,String> NaiveBayes, Map<Integer,String> ID3,
+                  double knnPercentage, double nbPercentage, double id3Percentage){
         KNNPredictions = KNN;
         NaiveBayesPredictions = NaiveBayes;
         ID3Predictions = ID3;
         rowCount = KNN.size();
+        KNNPredictionPercentage = knnPercentage;
+        NaiveBayesPredictionPercentage = nbPercentage;
+        ID3PredictionPercentage = id3Percentage;
     }
 
     /* Getters % Setters*/
@@ -45,5 +52,23 @@ public class Output {
      */
     public int getRowCount() {
         return rowCount;
+    }
+    /**
+     * @return KNNPredictionPercentage
+     */
+    public double getKNNPredictionPercentage() {
+        return KNNPredictionPercentage;
+    }
+    /**
+     * @return NaiveBayesPredictionPercentage
+     */
+    public double getNaiveBayesPredictionPercentage() {
+        return NaiveBayesPredictionPercentage;
+    }
+    /**
+     * @return ID3PredictionPercentage
+     */
+    public double getID3PredictionPercentage() {
+        return ID3PredictionPercentage;
     }
 }

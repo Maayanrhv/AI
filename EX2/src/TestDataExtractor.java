@@ -47,7 +47,8 @@ public class TestDataExtractor {
                     Row testRow = new Row();
                     // adding the content of this line to testRow
                     Map<String, String> values = new HashMap<>();
-                    for(int i = 0; i<data.getAmountOfAttributes(); i++){
+                    int i;
+                    for(i = 0; i<data.getAmountOfAttributes(); i++){
                         String attName =  data.getAttributesPositions().get(i);
                         String attVal = attributesValues[i];
                         values.put(attName, attVal);
@@ -55,6 +56,8 @@ public class TestDataExtractor {
                     testRow.setValues(values);
                     // adding to testRow the row number (this row index in test.txt)
                     testRow.setRowNumber(rowsCount);
+                    // adding to testRow its classification
+                    testRow.setClassification(attributesValues[i]);
                     // adding this testRow to testRows ArrayList
                     testRows.add(testRow);
                 }

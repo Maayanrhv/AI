@@ -34,7 +34,8 @@ public class PredictionManager {
         Map<Integer,String> ID3Predictions = id3.algorithm();
 
         // Create the Output file
-        Output output = new Output(KNNPredictions, NaiveBayesPredictions, ID3Predictions);
+        Output output = new Output(KNNPredictions, NaiveBayesPredictions, ID3Predictions,
+                knn.algPredictionPercentage, naiveBayes.algPredictionPercentage, id3.algPredictionPercentage);
         OutputGenerator.generateOutputFile(output);
     }
 }
