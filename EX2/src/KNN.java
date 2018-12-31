@@ -90,7 +90,27 @@ public class KNN {
      * @return the predicted classification value.
      */
     public String predictClassification(ArrayList<rowInfo> kClosestRowsInfo){
-        return "1";
+        // a map that holds the amount of each classification value in kClosestRowsInfo array
+        //      String - key - the classification value
+        //      Integer - value - the amount of time this classification value appears kClosestRowsInfo array
+        Map<String, Integer> classValAmount = new HashMap<>();
+        for(rowInfo ri: kClosestRowsInfo){
+            Integer val = classValAmount.get(ri.classification);
+            if (val == null) classValAmount.put(ri.classification, 1);
+            else classValAmount.put(ri.classification, val + 1);
+        }
+
+        // check which classification value appears mostly
+        int maxVal = 0;
+        String predictedClass = null;
+        for (Map.Entry<String, Integer> entry : classValAmount.entrySet()) {
+            if(maxVal < entry.getValue()){
+                maxVal = entry.getValue();
+                predictedClass = entry.getKey();
+            }
+        }
+
+        return predictedClass;
     }
 }
 
