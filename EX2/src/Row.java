@@ -1,7 +1,7 @@
 import java.util.HashMap;
 import java.util.Map;
 
-public class TrainRow {
+public class Row {
     /* Properties */
     Map<String,String> values = new HashMap<>();
     int rowNumber;

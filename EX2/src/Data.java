@@ -9,7 +9,7 @@ import java.util.Map;
  */
 public class Data {
     /* Properties */
-    private ArrayList<TrainRow> trainRows = new ArrayList<>();
+    private ArrayList<Row> trainRows = new ArrayList<>();
     private ArrayList<String>[] possibleAttributes;
     private Map<Integer, String> attributesPositions = new HashMap<>();
     private ArrayList<String> possibleClassifications = new ArrayList<>();
@@ -21,7 +21,7 @@ public class Data {
     /**
      * @return trainRows
      */
-    public ArrayList<TrainRow> getTrainRows() {
+    public ArrayList<Row> getRows() {
         return trainRows;
     }
     /**
@@ -62,10 +62,10 @@ public class Data {
     }
 
     /**
-     * @param trainRowsVal to set as trainRows
+     * @param rowsVal to set as trainRows
      */
-    public void setTrainRows(ArrayList<TrainRow> trainRowsVal) {
-        this.trainRows = trainRowsVal;
+    public void setRows(ArrayList<Row> rowsVal) {
+        this.trainRows = rowsVal;
     }
     /**
      * @param possibleAttributesVal to set as possibleAttributes

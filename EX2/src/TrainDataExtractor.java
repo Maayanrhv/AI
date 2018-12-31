@@ -6,9 +6,9 @@ import java.util.Map;
 /**
  * This class takes the data from train input file and creates a Data object from it.
  */
-public class FileExtractor {
+public class TrainDataExtractor {
     /**
-     * Extracts given input from file a Data object.
+     * Extracts given input from file to a Data object.
      */
     public static Data extractAndProcess(){
         String fileName = "train.txt";
@@ -19,7 +19,7 @@ public class FileExtractor {
 
         ArrayList<String>[] possibleAttributes = null;
         ArrayList<String> possibleClassifications = new ArrayList<>();
-        ArrayList<TrainRow> trainRows = new ArrayList<>();
+        ArrayList<Row> trainRows = new ArrayList<>();
 
         try {
             File file = new File(fileName);
@@ -53,7 +53,7 @@ public class FileExtractor {
                 // if this is NOT the first line -
                 //      collect each attribute's values
                 //      collect the classification's values
-                //      build a TrainRow object to hold all values for each line.
+                //      build a Row object to hold all values for each line.
                 else
                 {
                     String[] attributesValues = line.split("\t");
@@ -96,8 +96,8 @@ public class FileExtractor {
                         possibleClassifications.add(attributesValues[i]);
                     }
 
-                    // build a TrainRow object to hold all values for each line.
-                    TrainRow trainRow = new TrainRow();
+                    // build a Row object to hold all values for each line.
+                    Row trainRow  = new Row();
                     // adding the content of this row to trainRow
                     Map<String, String> values = new HashMap<>();
                     for(int j = 0; j<data.getAmountOfAttributes(); j++){
@@ -108,9 +108,9 @@ public class FileExtractor {
                     trainRow.setValues(values);
                     // adding to trainRow the row number (this row index in train.txt)
                     trainRow.setRowNumber(rowsCount);
-                    // adding to trainRow its classification
+                    // adding to row its classification
                     trainRow.setClassification(attributesValues[i]);
-                    // adding this trainRow to trainRows ArrayList
+                    // adding this row to trainRows ArrayList
                     trainRows.add(trainRow);
                 }
                 input.add(line);
@@ -120,8 +120,8 @@ public class FileExtractor {
             data.setPossibleAttributes(possibleAttributes);
             // adding all the possible classifications to data.
             data.setPossibleClassifications(possibleClassifications);
-            // adding trainRows to data.
-            data.setTrainRows(trainRows);
+            // adding rows to data.
+            data.setRows(trainRows);
 
             bufferedReader.close();
             return data;

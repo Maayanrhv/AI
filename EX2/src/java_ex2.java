@@ -10,7 +10,7 @@ public class java_ex2 {
      * calculate the classification in the test file.
      */
     public static void main(String[] args) {
-        Data data = FileExtractor.extractAndProcess();
+        Data data = TrainDataExtractor.extractAndProcess();
         PredictionManager manager = new PredictionManager(data);
         manager.run();
     }
