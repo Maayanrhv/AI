@@ -15,10 +15,12 @@ public class FileExtractor {
         Data data = new Data();
 
         ArrayList<String> input = new ArrayList<>();
-        // this will reference one line at a time
-        String line;
+        String line; // this will reference one line at a time
+
         ArrayList<String>[] possibleAttributes = null;
         ArrayList<String> possibleClassifications = new ArrayList<>();
+        ArrayList<TrainRow> trainRows = new ArrayList<>();
+
         try {
             File file = new File(fileName);
             FileReader fileReader = new FileReader(file);
@@ -93,6 +95,23 @@ public class FileExtractor {
                         // to the possibleAttributes array.
                         possibleClassifications.add(attributesValues[i]);
                     }
+
+                    // build a TrainRow object to hold all values for each line.
+                    TrainRow trainRow = new TrainRow();
+                    // adding the content of this row to trainRow
+                    Map<String, String> values = new HashMap<>();
+                    for(int j = 0; j<data.getAmountOfAttributes(); j++){
+                        String attName =  data.getAttributesPositions().get(j);
+                        String attVal = attributesValues[j];
+                        values.put(attName, attVal);
+                    }
+                    trainRow.setValues(values);
+                    // adding to trainRow the row number (this row index in train.txt)
+                    trainRow.setRowNumber(rowsCount);
+                    // adding to trainRow its classification
+                    trainRow.setClassification(attributesValues[i]);
+                    // adding this trainRow to trainRows ArrayList
+                    trainRows.add(trainRow);
                 }
                 input.add(line);
                 rowsCount++;
@@ -101,6 +120,8 @@ public class FileExtractor {
             data.setPossibleAttributes(possibleAttributes);
             // adding all the possible classifications to data.
             data.setPossibleClassifications(possibleClassifications);
+            // adding trainRows to data.
+            data.setTrainRows(trainRows);
 
             bufferedReader.close();
             return data;
