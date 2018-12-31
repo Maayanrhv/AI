@@ -21,7 +21,7 @@ public class Data {
     /**
      * @return trainRows
      */
-    public ArrayList<Row> getRows() {
+    public ArrayList<Row> getTrainRows() {
         return trainRows;
     }
     /**

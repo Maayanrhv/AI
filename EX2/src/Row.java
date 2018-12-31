@@ -3,9 +3,9 @@ import java.util.Map;
 
 public class Row {
     /* Properties */
-    Map<String,String> values = new HashMap<>();
-    int rowNumber;
-    String classification;
+    private Map<String,String> values = new HashMap<>();
+    private int rowNumber;
+    private String classification;
 
     /* Constructors */
 
