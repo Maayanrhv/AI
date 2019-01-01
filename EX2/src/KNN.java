@@ -40,22 +40,22 @@ public class KNN {
             // keep the hamming distances of the k chosen train rows,
             // so that we can compare distances and change these 2 lists
             // whenever necessary.
-            ArrayList<rowInfo> kClosestRowsInfo = new ArrayList<>();
+            ArrayList<RowInfo> kClosestRowsInfo = new ArrayList<>();
             // calculate hamming distances between this test row to each row in trainRows
             for(Row trainRow: data.getTrainRows()){
                 int hammingDistance = findHammingDistance(testRow,trainRow);
                 // if kClosestRowsInfo is not yet full
                 if(kClosestRowsInfo.size() < k){
-                    rowInfo rowInformation = new rowInfo(hammingDistance, trainRow.getClassification());
+                    RowInfo rowInformation = new RowInfo(hammingDistance, trainRow.getClassification());
                     kClosestRowsInfo.add(rowInformation);
                 }
                 // if kClosestRowsInfo is full, we prioritize by choosing
                 // the k smallest hammingDistances
                 else{
-                    for(rowInfo ri: kClosestRowsInfo){
+                    for(RowInfo ri: kClosestRowsInfo){
                         if(ri.hammingDistance > hammingDistance){
                             kClosestRowsInfo.remove(ri);
-                            rowInfo rowInformation = new rowInfo(hammingDistance, trainRow.getClassification());
+                            RowInfo rowInformation = new RowInfo(hammingDistance, trainRow.getClassification());
                             kClosestRowsInfo.add(rowInformation);
                             break;
                         }
@@ -102,12 +102,12 @@ public class KNN {
      *                        frequent classification value in.
      * @return the predicted classification value.
      */
-    private String predictClassification(ArrayList<rowInfo> kClosestRowsInfo){
+    private String predictClassification(ArrayList<RowInfo> kClosestRowsInfo){
         // a map that holds the amount of each classification value in kClosestRowsInfo array
         //      String - key - the classification value
         //      Integer - value - the amount of time this classification value appears kClosestRowsInfo array
         Map<String, Integer> classValAmount = new HashMap<>();
-        for(rowInfo ri: kClosestRowsInfo){
+        for(RowInfo ri: kClosestRowsInfo){
             Integer val = classValAmount.get(ri.classification);
             if (val == null) classValAmount.put(ri.classification, 1);
             else classValAmount.put(ri.classification, val + 1);
@@ -155,17 +155,17 @@ public class KNN {
  * so that if a smaller Hamming distance was found, we'd be able to change
  * it to the smaller one along with its matching classification.
  */
-class rowInfo{
+class RowInfo {
     int hammingDistance;
     String classification;
 
     /* Constructor */
     /**
-     * Constructs a new rowInfo instance.
+     * Constructs a new RowInfo instance.
      * @param hammingDis hamming distance from a specific train row
      * @param classificationVal classification of this train row
      */
-    public rowInfo(int hammingDis, String classificationVal){
+    public RowInfo(int hammingDis, String classificationVal){
         hammingDistance = hammingDis;
         classification = classificationVal;
     }
