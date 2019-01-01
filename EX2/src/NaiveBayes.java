@@ -39,7 +39,7 @@ public class NaiveBayes {
         ArrayList<AttGivenClassProb> attsGivenClassesProbs = new ArrayList<>();
         // first, calculate the probability of each classification value
         // according to the training data
-        // P(Class) = #rowsWithClassClassification / #rowsTotal
+        // P(Class) = #rowsWithClassClassification
         // count #rows-With-Class-Classification
         int classCount = 0;
         for(String classVal: data.getPossibleClassifications()){
@@ -48,14 +48,14 @@ public class NaiveBayes {
                     classCount++;
                 }
             }
-            double prob = (double)classCount/(double)data.getTrainRows().size();
+            double prob = (double)classCount;
             classesProbs.put(classVal, prob);
             classCount = 0;
         }
 
         // calculate how many times each attribute value and each
         // classification value appear together.
-        // P(Att & Class) = #rowsWithAttAndClass / #rowsTotal
+        // P(Att & Class) = #rowsWithAttAndClass in train data
         int attAndClassCount = 0;
         for(String classVal: data.getPossibleClassifications()){
             for(int i=0; i<data.getAmountOfAttributes(); i++) {
@@ -67,8 +67,9 @@ public class NaiveBayes {
                             attAndClassCount++;
                         }
                     }
-                    double prob = (double) attAndClassCount / (double) data.getTrainRows().size();
-                    AttAndClassProb aacp = new AttAndClassProb(attVal, classVal, prob);
+                    //double prob = (double) attAndClassCount / (double) data.getTrainRows().size();
+                    //AttAndClassProb aacp = new AttAndClassProb(attVal, classVal, prob);
+                    AttAndClassProb aacp = new AttAndClassProb(attVal, classVal, attAndClassCount);
                     attsAndClassesProbs.add(aacp);
                     attAndClassCount = 0;
                 }
@@ -77,7 +78,8 @@ public class NaiveBayes {
 
         // calculate how many times each attribute value appears,
         // given the classification value (for each classification value)
-        // P(Att|Class)
+        // P(Att|Class) = P(Att & Class)/P(Class)
+        //              = #rowsWithAttAndClass in train data/#rowsWithClassClassification
         for(AttAndClassProb attAndClass: attsAndClassesProbs){
             double prob = attAndClass.probability / classesProbs.get(attAndClass.classification);
             AttGivenClassProb agcp = new AttGivenClassProb(attAndClass.attribute, attAndClass.classification, prob);
@@ -99,7 +101,7 @@ public class NaiveBayes {
             String predictedClassification = "";
             // check the probability with every possible classification
             for(String possibleClass: data.getPossibleClassifications()){
-                multVal = calcProbsMult(testRow, possibleClass);
+                multVal = calcProbsMult(testRow, possibleClass, attsGivenClassesProbs);
                 if(max < multVal) {
                     max = multVal;
                     predictedClassification = possibleClass;
@@ -108,6 +110,8 @@ public class NaiveBayes {
             predictedClassifications.put(testRow.getRowNumber(), predictedClassification);
         }
 
+        // calculate NB's accuracy percentage.
+        percentageCalc(predictedClassifications);
         return predictedClassifications;
     }
 
@@ -117,10 +121,15 @@ public class NaiveBayes {
      * @param classification ClassX
      * @return multiplicationValueX
      */
-    public double calcProbsMult (Row testRow, String classification){
+    double calcProbsMult (Row testRow, String classification,
+                                 ArrayList<AttGivenClassProb> attsGivenClassesProbs){
         double mult = 1;
         for (Map.Entry<String, String> aAtt : testRow.getValues().entrySet()) {
-            mult *= findAttandClass(aAtt.getValue(), classification).probability;
+            AttGivenClassProb attGivenClassProb = findAttandClass(attsGivenClassesProbs, aAtt.getValue(), classification);
+            if(attGivenClassProb != null) {
+                mult *= attGivenClassProb.probability;
+            }
+            else return 0;
         }
         return mult;
     }
@@ -131,8 +140,33 @@ public class NaiveBayes {
      * @param classification of AttGivenClassProb to find
      * @return AttGivenClassProb with these attribute and classification.
      */
-    public AttGivenClassProb findAttandClass(String attribute, String classification){
-        return new AttGivenClassProb("","");
+    AttGivenClassProb findAttandClass(ArrayList<AttGivenClassProb> attsGivenClassesProbs,
+                                             String attribute, String classification){
+        for(int i=0; i<attsGivenClassesProbs.size(); i++){
+            if(attsGivenClassesProbs.get(i).attribute.equals(attribute) &&
+                    attsGivenClassesProbs.get(i).classification.equals(classification))
+                return attsGivenClassesProbs.get(i);
+        }
+        return null;
+    }
+
+    /**
+     * Calculates this algorithm's amount of correct predictions
+     * in relation to all predictions (the amount of test rows).
+     * The calculated value is put in algPredictionPercentage property.
+     * @param predictedClassifications the predicted classifications
+     */
+    public void percentageCalc(Map<Integer,String> predictedClassifications){
+        int testRowsAmount = testData.getTestRows().size();
+        int corrPredictAmount = 0;
+        for (Map.Entry<Integer, String> aRow : predictedClassifications.entrySet()) {
+            String prediction = aRow.getValue();
+            String corrClass = testData.getTestRows().get(aRow.getKey()-1).getClassification();
+            if(prediction.equals(corrClass)){
+                corrPredictAmount++;
+            }
+        }
+        algPredictionPercentage = (double)(corrPredictAmount)/(double) (testRowsAmount);
     }
 }
 
