@@ -39,7 +39,7 @@ public class NaiveBayes {
         ArrayList<AttGivenClassProb> attsGivenClassesProbs = new ArrayList<>();
         // first, calculate the probability of each classification value
         // according to the training data
-        // P(Class) = #rowsWithClassClassification
+        // P(Class) = #rowsWithClassClassification / #rowsTotal
         // count #rows-With-Class-Classification
         int classCount = 0;
         for(String classVal: data.getPossibleClassifications()){
@@ -48,14 +48,14 @@ public class NaiveBayes {
                     classCount++;
                 }
             }
-            double prob = (double)classCount;
+            double prob = (double)classCount/(double)data.getTrainRows().size();
             classesProbs.put(classVal, prob);
             classCount = 0;
         }
 
         // calculate how many times each attribute value and each
         // classification value appear together.
-        // P(Att & Class) = #rowsWithAttAndClass in train data
+        // P(Att & Class) = #rowsWithAttAndClass in train data / #rowsTotal
         int attAndClassCount = 0;
         for(String classVal: data.getPossibleClassifications()){
             for(int i=0; i<data.getAmountOfAttributes(); i++) {
@@ -67,9 +67,8 @@ public class NaiveBayes {
                             attAndClassCount++;
                         }
                     }
-                    //double prob = (double) attAndClassCount / (double) data.getTrainRows().size();
-                    //AttAndClassProb aacp = new AttAndClassProb(attVal, classVal, prob);
-                    AttAndClassProb aacp = new AttAndClassProb(attVal, classVal, attAndClassCount);
+                    double prob = (double) attAndClassCount / (double) data.getTrainRows().size();
+                    AttAndClassProb aacp = new AttAndClassProb(attVal, classVal, prob);
                     attsAndClassesProbs.add(aacp);
                     attAndClassCount = 0;
                 }
@@ -79,7 +78,6 @@ public class NaiveBayes {
         // calculate how many times each attribute value appears,
         // given the classification value (for each classification value)
         // P(Att|Class) = P(Att & Class)/P(Class)
-        //              = #rowsWithAttAndClass in train data/#rowsWithClassClassification
         for(AttAndClassProb attAndClass: attsAndClassesProbs){
             double prob = attAndClass.probability / classesProbs.get(attAndClass.classification);
             AttGivenClassProb agcp = new AttGivenClassProb(attAndClass.attribute, attAndClass.classification, prob);
