@@ -28,7 +28,7 @@ public class KNN {
     /* Methods */
     /**
      * Runs KNN algorithm and creates a map of the results.
-     * That is, it match a predicted classification to the
+     * That is, it matches a predicted classification to the
      * row index number in the test file.
      */
     public Map<Integer,String> algorithm(){

@@ -103,7 +103,4 @@ public class Data {
     public void setAmountOfAttributes(int amountOfAttributesVal) {
         amountOfAttributes = amountOfAttributesVal;
     }
-
-
-    /* Methods */
 }
