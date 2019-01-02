@@ -31,7 +31,7 @@ public class NaiveBayes {
      * row index number in the test file.
      */
     public Map<Integer,String> algorithm(){
-        // Bayes: P(Att|Class) = P(Att & Class) / P(Class)
+        // Bayes: P(Att|Class) = (N(Att & Class) + 1)/ (N(Class) + #AttPossibleValues)
         Map<Integer,String> predictedClassifications = new HashMap<>();
         // We hold a list of each class type to ease the Naive Bayes calculations later.
         Map<String, Double> classesProbs = new HashMap<>(); // keeps the probabilities of each classification value.
@@ -39,7 +39,7 @@ public class NaiveBayes {
         ArrayList<AttGivenClassProb> attsGivenClassesProbs = new ArrayList<>();
         // first, calculate the probability of each classification value
         // according to the training data
-        // P(Class) = #rowsWithClassClassification / #rowsTotal
+        // N(Class) = #rowsWithClassClassification
         // count #rows-With-Class-Classification
         int classCount = 0;
         for(String classVal: data.getPossibleClassifications()){
@@ -48,14 +48,14 @@ public class NaiveBayes {
                     classCount++;
                 }
             }
-            double prob = (double)classCount/(double)data.getTrainRows().size();
+            double prob = (double)classCount;
             classesProbs.put(classVal, prob);
             classCount = 0;
         }
 
         // calculate how many times each attribute value and each
         // classification value appear together.
-        // P(Att & Class) = #rowsWithAttAndClass in train data / #rowsTotal
+        // N(Att & Class) = #rowsWithAttAndClass in train data
         int attAndClassCount = 0;
         for(String classVal: data.getPossibleClassifications()){
             for(int i=0; i<data.getAmountOfAttributes(); i++) {
@@ -67,8 +67,9 @@ public class NaiveBayes {
                             attAndClassCount++;
                         }
                     }
-                    double prob = (double) attAndClassCount / (double) data.getTrainRows().size();
-                    AttAndClassProb aacp = new AttAndClassProb(attVal, classVal, prob);
+                    double prob = (double) attAndClassCount;
+                    int attName = i;
+                    AttAndClassProb aacp = new AttAndClassProb(attVal, classVal, prob, attName);
                     attsAndClassesProbs.add(aacp);
                     attAndClassCount = 0;
                 }
@@ -77,9 +78,11 @@ public class NaiveBayes {
 
         // calculate how many times each attribute value appears,
         // given the classification value (for each classification value)
-        // P(Att|Class) = P(Att & Class)/P(Class)
+        // P(Att|Class) = (N(Att & Class) + 1)/ (N(Class) + #AttPossibleValues)
         for(AttAndClassProb attAndClass: attsAndClassesProbs){
-            double prob = attAndClass.probability / classesProbs.get(attAndClass.classification);
+            int amountOfValuesInAttName = data.getPossibleAttributes()[attAndClass.attributeTypePos].size();
+            double prob = (attAndClass.probability + 1)/
+                            (classesProbs.get(attAndClass.classification) + amountOfValuesInAttName);
             AttGivenClassProb agcp = new AttGivenClassProb(attAndClass.attribute, attAndClass.classification, prob);
             attsGivenClassesProbs.add(agcp);
         }
@@ -178,6 +181,7 @@ public class NaiveBayes {
     String attribute;
     String classification;
     double probability;
+    int attributeTypePos;
 
     /* Constructor */
     /**
@@ -185,31 +189,13 @@ public class NaiveBayes {
      * @param attribute the attribute
      * @param classification the classification
      * @param probability of attribute and classification
+     * @param attNamePos the attribute name (type) position in train data
      */
-    AttAndClassProb(String attribute, String classification, double probability){
+    AttAndClassProb(String attribute, String classification, double probability, int attNamePos){
         this.attribute = attribute;
         this.classification = classification;
         this.probability = probability;
-    }
-
-    /* Getters & Setters */
-    /**
-     * @return attribute
-     */
-    public String getAttribute() {
-        return attribute;
-    }
-    /**
-     * @return classification
-     */
-    String getClassification() {
-        return classification;
-    }
-    /**
-     * @return probability
-     */
-    double getProbability() {
-        return probability;
+        this.attributeTypePos = attNamePos;
     }
  }
 
@@ -235,25 +221,5 @@ public class NaiveBayes {
         this.attribute = attribute;
         this.classification = classification;
         this.probability = probability;
-    }
-
-    /* Getters & Setters */
-    /**
-     * @return attribute
-     */
-    public String getAttribute() {
-        return attribute;
-    }
-    /**
-     * @return classification
-     */
-    String getClassification() {
-        return classification;
-    }
-    /**
-     * @return probability
-     */
-    double getProbability() {
-        return probability;
     }
  }

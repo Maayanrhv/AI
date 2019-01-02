@@ -31,15 +31,16 @@ public class ID3 {
      * row index number in the test file.
      */
     public Map<Integer,String> algorithm(){
-        // build DTL tree from the train data
+        // Build DTL tree from the train data
         //take the classification of the first row in train data as the default
         // classification of DTL's first call.
         String defClass = data.getTrainRows().get(0).getClassification();
-        Node tree = DTL(data, data.getPossibleAttributes(), defClass);
+        Node tree = DTL(data.getTrainRows(), data.getPossibleAttributes(), defClass);
 
-        // print tree
-        printTree(Node tree);
+        // Print tree
+        printTree(tree);
 
+        // Predict classifications
         // for each row in the test file, find its classification
         Map<Integer,String> predictedClassifications = new HashMap<>();
         for(Row testRow: testData.getTestRows()){
@@ -63,12 +64,44 @@ public class ID3 {
      *                     the training data.
      * @return a node that represents a subtree or a leaf.
      */
-    Node DTL(Data examples, ArrayList<String>[] attributes, String defaultClass){
+    Node DTL(ArrayList<Row> examples, ArrayList<String>[] attributes, String defaultClass){
+        // Stop conditions:
+        //      - if there are no more trin rows - return defaultClass.
+        //      - if all the train rows that we got as a parameter to the function,
+        //        have the same classification - return this classification.
+        //      - if the attributes list is empty, but there are still some different
+        //        classifications - return Mod(examples)
 
+        // Step 1: choose the ideal attribute -> best
+        //         - Entropy
+        //         - Gain
+        //         - take the attribute with the biggest Gain value
+
+        // Step 2: create a new node with the aatribute name, best -> tree
+
+        // Step 3:
+        return null;
+    }
+
+    /**
+     * calculates the most common classification in a group of training rows.
+     * @param examples the training rows
+     * @return a leaf node with the calculated classification
+     */
+    Node Mod(ArrayList<Row> examples){
+        return null;
+    }
+
+    double Gain(){
+        return 0;
+    }
+
+    double Entropy(){
+        return 0;
     }
 
     String predictClass(Row testRow, Node tree){
-
+        return null;
     }
 
     void printTree(Node tree){
