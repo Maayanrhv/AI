@@ -31,7 +31,6 @@ public class NaiveBayes {
      * row index number in the test file.
      */
     public Map<Integer,String> algorithm(){
-        //TODO: how to calculate #AttPossibleValues
         // Bayes: P(Att|Class) = (N(Att & Class) + 1)/ (N(Class) + #AttPossibleValues)
         Map<Integer,String> predictedClassifications = new HashMap<>();
         // We hold a list of each class type to ease the Naive Bayes calculations later.
@@ -84,7 +83,6 @@ public class NaiveBayes {
             int amountOfValuesInAttName = data.getPossibleAttributes()[attAndClass.attributeTypePos].size();
             double prob = (attAndClass.probability + 1)/
                             (classesProbs.get(attAndClass.classification) + amountOfValuesInAttName);
-            //double prob = (attAndClass.probability)/ (classesProbs.get(attAndClass.classification));
             AttGivenClassProb agcp = new AttGivenClassProb(attAndClass.attribute, attAndClass.classification, prob);
             attsGivenClassesProbs.add(agcp);
         }

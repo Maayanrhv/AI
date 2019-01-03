@@ -32,7 +32,7 @@ public class ID3 {
      */
     public Map<Integer,String> algorithm(){
         // Build DTL tree from the train data
-        //take the classification of the first row in train data as the default
+        // take the classification of the first row in train data as the default
         // classification of DTL's first call.
         String defClass = data.getTrainRows().get(0).getClassification();
         Node tree = DTL(data.getTrainRows(), data.getPossibleAttributes(), new Node(defClass));
