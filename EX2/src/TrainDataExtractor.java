@@ -39,7 +39,7 @@ public class TrainDataExtractor {
                     for(i=0; i<attributesNames.length - 1; i++){
                         attributesPositions.put(i, attributesNames[i]);
                     }
-                    data.setAttributesPositions(attributesPositions);
+                    data.getAttributeRelation().setAttributesPositions(attributesPositions);
                     // adding the amount of attributes to data.
                     data.setAmountOfAttributes(i);
                     // adding the classification name to data.
@@ -101,7 +101,7 @@ public class TrainDataExtractor {
                     // adding the content of this row to trainRow
                     Map<String, String> values = new HashMap<>();
                     for(int j = 0; j<data.getAmountOfAttributes(); j++){
-                        String attName =  data.getAttributesPositions().get(j);
+                        String attName =  data.getAttributeRelation().getAttributesPositions().get(j);
                         String attVal = attributesValues[j];
                         values.put(attName, attVal);
                     }
@@ -117,7 +117,7 @@ public class TrainDataExtractor {
                 rowsCount++;
             }
             // adding all the possible attributes to data.
-            data.setPossibleAttributes(possibleAttributes);
+            data.getAttributeRelation().setPossibleAttributes(possibleAttributes);
             // adding all the possible classifications to data.
             data.setPossibleClassifications(possibleClassifications);
             // adding rows to data.

@@ -1,6 +1,4 @@
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * This class holds the training data according to which,
@@ -10,8 +8,7 @@ import java.util.Map;
 public class Data {
     /* Properties */
     private ArrayList<Row> trainRows = new ArrayList<>();
-    private ArrayList<String>[] possibleAttributes;
-    private Map<Integer, String> attributesPositions = new HashMap<>();
+    private AttributeRelation attributeRelation = new AttributeRelation();
     private ArrayList<String> possibleClassifications = new ArrayList<>();
     private String classificationName;
     private int classificationPosition;
@@ -25,16 +22,10 @@ public class Data {
         return trainRows;
     }
     /**
-     * @return possibleAttributes
+     * @return attributeRelation
      */
-    public ArrayList<String>[] getPossibleAttributes() {
-        return possibleAttributes;
-    }
-    /**
-     * @return attributesPositions
-     */
-    public Map<Integer, String> getAttributesPositions() {
-        return attributesPositions;
+    public AttributeRelation getAttributeRelation() {
+        return attributeRelation;
     }
     /**
      * @return classificationName
@@ -68,16 +59,10 @@ public class Data {
         this.trainRows = rowsVal;
     }
     /**
-     * @param possibleAttributesVal to set as possibleAttributes
+     * @param attributeRelationVal to set as trainRows
      */
-    public void setPossibleAttributes(ArrayList<String>[] possibleAttributesVal) {
-        this.possibleAttributes = possibleAttributesVal;
-    }
-    /**
-     * @param attributesPositionsVal to set as attributesPositions
-     */
-    public void setAttributesPositions(Map<Integer, String> attributesPositionsVal) {
-        this.attributesPositions = attributesPositionsVal;
+    public void setAttributeRelation(AttributeRelation attributeRelationVal) {
+        this.attributeRelation = attributeRelationVal;
     }
     /**
      * @param classificationNameVal to set as classificationName
@@ -102,19 +87,5 @@ public class Data {
      */
     public void setAmountOfAttributes(int amountOfAttributesVal) {
         amountOfAttributes = amountOfAttributesVal;
-    }
-
-    /* Methods */
-    /**
-     * maps an attribute name to its position.
-     * @param attName attribute name to find its position
-     * @return the attribute name's position
-     */
-    public int findPossibleAttsPositionByAttName(String attName){
-        for(int i=0; i<attributesPositions.size(); i++){
-            if(attributesPositions.get(i).equals(attName))
-                return i;
-        }
-        return -1;
     }
 }

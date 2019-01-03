@@ -49,7 +49,7 @@ public class TestDataExtractor {
                     Map<String, String> values = new HashMap<>();
                     int i;
                     for(i = 0; i<data.getAmountOfAttributes(); i++){
-                        String attName =  data.getAttributesPositions().get(i);
+                        String attName =  data.getAttributeRelation().getAttributesPositions().get(i);
                         String attVal = attributesValues[i];
                         values.put(attName, attVal);
                     }

@@ -35,7 +35,7 @@ public class ID3 {
         // take the classification of the first row in train data as the default
         // classification of DTL's first call.
         String defClass = data.getTrainRows().get(0).getClassification();
-        Node tree = DTL(data.getTrainRows(), data.getPossibleAttributes(), new Node(defClass));
+        Node tree = DTL(data.getTrainRows(), data.getAttributeRelation(), new Node(defClass));
 
         // Print tree
         printTree(tree);
@@ -64,7 +64,7 @@ public class ID3 {
      *                     the training data.
      * @return a node that represents a subtree or a leaf.
      */
-    Node DTL(ArrayList<Row> examples, ArrayList<String>[] attributes, Node defaultClass){
+    Node DTL(ArrayList<Row> examples, AttributeRelation attributes, Node defaultClass){
         // Stop conditions:
         //      - if there are no more train rows - return defaultClass.
         if (examples.isEmpty()){ return defaultClass;}
@@ -84,7 +84,7 @@ public class ID3 {
         if(attributes == null){ return Mode(examples); }
 
 
-        // Step 1: choose the ideal attribute -> best
+        // Step 1: choose the ideal attribute name -> best
         //         - Entropy
         //         - Gain
         //         - take the attribute with the biggest Gain value
@@ -94,7 +94,8 @@ public class ID3 {
 
         Node tree = null;
         // Step 2: for each attribute value i in best do:
-        for(String vi: data.getPossibleAttributes()[data.findPossibleAttsPositionByAttName(best)]) {
+        for(String vi: data.getAttributeRelation().getPossibleAttributes()
+                [data.getAttributeRelation().findPossibleAttsPositionByAttName(best)]) {
             //         - take all the train rows where their attribute name (best type)
             //           is valued by vi -> iExamples
             ArrayList<Row> iExamples = new ArrayList<>();
@@ -104,7 +105,7 @@ public class ID3 {
                 }
             }
             // calculate attributes without best
-            ArrayList<String>[] attributesWithoutBest = CalcAttsWithoutBest(attributes, best);
+            AttributeRelation attributesWithoutBest = CalcAttsWithoutBest(attributes, best);
             //         - recursive call to DTL(iExamples, attributes\{best}, Mode(examples)) -> subtree
             Node subtree = DTL(iExamples, attributesWithoutBest, Mode(examples));
             //         - create a new node with the attribute name, best and subtree -> tree
@@ -119,15 +120,41 @@ public class ID3 {
         return tree;
     }
 
-    //TODO: complete this func
-    ArrayList<String>[] CalcAttsWithoutBest(ArrayList<String>[] attributes, String best){
-        ArrayList<String>[] newAtts = new ArrayList[attributes.length - 1];
-        for(int i=0; i<attributes.length; i++){
-
+    /**
+     * creates a new AttributeRelation object that is equal to the given
+     * AttributeRelation object, except for best attribute name.
+     * @param attributes
+     * @param best
+     * @return
+     */
+    AttributeRelation CalcAttsWithoutBest(AttributeRelation attributes, String best){
+        // create a new AttributeRelation instance to return
+        AttributeRelation newAtts = new AttributeRelation();
+        ArrayList<String>[] possibleAtts = new ArrayList[attributes.getPossibleAttributes().length - 1];
+        Map<Integer,String> newAttsPoses = new HashMap<>();
+        // find the position of best in attributes
+        int posToExclude = attributes.findPossibleAttsPositionByAttName(best);
+        // add attributes' names and values to newAttsPoses and possibleAtts, excluding best and its values
+        int countOfNewAtts = 0;
+        for(int i=0; i<attributes.getAttributesPositions().size(); i++){
+            // if i in not the position of best, then:
+            //      - add the att name's values to possibleAtts
+            //      - add the att name to newAttsPoses, where the position is the
+            //        position of its values in possibleAtts
+            if(i != posToExclude){
+                possibleAtts[countOfNewAtts] = attributes.getPossibleAttributes()[i];
+                newAttsPoses.put(countOfNewAtts,attributes.getAttributesPositions().get(i));
+                countOfNewAtts++;
+            }
+            // else, do nothing (don't add best and its values to newAtts
         }
+        // add newAttsPoses and possibleAtts to newAtts and return it
+        newAtts.setPossibleAttributes(possibleAtts);
+        newAtts.setAttributesPositions(newAttsPoses);
         return newAtts;
     }
 
+    //TODO: complete this func
     /**
      * calculates the most common classification in a group of training rows.
      * @param examples the training rows
@@ -137,23 +164,33 @@ public class ID3 {
         return null;
     }
 
+    //TODO: complete this func
     String Gain(){
-        return 0;
+        return "";
     }
 
+    //TODO: complete this func
     double Entropy(){
         return 0;
     }
 
+    //TODO: complete this func
     String predictClass(Row testRow, Node tree){
         return null;
     }
 
+    //TODO: complete this func
     void printTree(Node tree){
 
     }
 }
 
+/**
+ * This class represents a node in the DTL tree.
+ * A node can be a subtree or a leaf.
+ * If it is a subtree, classification property is null, since we haven't determined what it is yet.
+ * If it is a leaf, only classification property is NOT null, since the leaf represents only a classification.
+ */
 class Node{
     /* Properties */
     String attributeName;

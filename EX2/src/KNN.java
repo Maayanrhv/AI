@@ -83,7 +83,7 @@ public class KNN {
     private int findHammingDistance(Row testRow, Row trainRow){
         int hammingDistance = 0;
 
-        for (Map.Entry<Integer, String> aAtt : data.getAttributesPositions().entrySet()) {
+        for (Map.Entry<Integer, String> aAtt : data.getAttributeRelation().getAttributesPositions().entrySet()) {
             String attName = aAtt.getValue();
             // if the attribute value for each row of the same attribute name are not equal,
             // then the Hamming distance is raised by 1.

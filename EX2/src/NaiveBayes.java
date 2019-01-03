@@ -59,9 +59,9 @@ public class NaiveBayes {
         int attAndClassCount = 0;
         for(String classVal: data.getPossibleClassifications()){
             for(int i=0; i<data.getAmountOfAttributes(); i++) {
-                for (String attVal : data.getPossibleAttributes()[i]) {
+                for (String attVal : data.getAttributeRelation().getPossibleAttributes()[i]) {
                     for (Row trainRow : data.getTrainRows()) {
-                        String attName = data.getAttributesPositions().get(i);
+                        String attName = data.getAttributeRelation().getAttributesPositions().get(i);
                         if (trainRow.getClassification().equals(classVal)
                                 && trainRow.getValues().get(attName).equals(attVal)) {
                             attAndClassCount++;
@@ -80,7 +80,8 @@ public class NaiveBayes {
         // given the classification value (for each classification value)
         // P(Att|Class) = (N(Att & Class) + 1)/ (N(Class) + #AttPossibleValues)
         for(AttAndClassProb attAndClass: attsAndClassesProbs){
-            int amountOfValuesInAttName = data.getPossibleAttributes()[attAndClass.attributeTypePos].size();
+            int amountOfValuesInAttName = data.getAttributeRelation()
+                    .getPossibleAttributes()[attAndClass.attributeTypePos].size();
             double prob = (attAndClass.probability + 1)/
                             (classesProbs.get(attAndClass.classification) + amountOfValuesInAttName);
             AttGivenClassProb agcp = new AttGivenClassProb(attAndClass.attribute, attAndClass.classification, prob);
