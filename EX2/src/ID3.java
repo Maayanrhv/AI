@@ -85,21 +85,28 @@ public class ID3 {
 
 
         // Step 1: choose the ideal attribute name -> best
-        //         - Entropy
-        //         - Gain
+        //         - Gain(examples, attName) using Entropy(examples)
         //         - take the attribute with the biggest Gain value
-        double entropy = Entropy();
-        String best = Gain(Entropy());
+        String best = null;
+        int gain;
+        int maxGain = 0;
+        for(Map.Entry<Integer, String> attName : attributes.getAttributesPositions().entrySet()){
+             gain = Gain(examples, attName.getValue());
+             if(maxGain < gain){
+                 maxGain = gain;
+                 best = attName.getValue();
+             }
+        }
 
 
         Node tree = null;
-        // Step 2: for each attribute value i in best do:
+        // Step 2: for each attribute value vi in best do:
         for(String vi: data.getAttributeRelation().getPossibleAttributes()
                 [data.getAttributeRelation().findPossibleAttsPositionByAttName(best)]) {
             //         - take all the train rows where their attribute name (best type)
             //           is valued by vi -> iExamples
             ArrayList<Row> iExamples = new ArrayList<>();
-            for(Row row: examples) { //TODO: is it all row in examples or all row in train data?
+            for(Row row: examples) {
                 if(row.getValues().get(best).equals(vi)){
                     iExamples.add(row);
                 }
@@ -186,12 +193,19 @@ public class ID3 {
     }
 
     //TODO: complete this func
-    String Gain(){
-        return "";
+    int Gain(ArrayList<Row> examples, String best){
+        //calls Entropy(examples)
+        return 0;
     }
 
     //TODO: complete this func
-    double Entropy(){
+    double Entropy(ArrayList<Row> examples){
+        double entropy = 0;
+        // for each classification p, calculate: -p * log(p)
+        // add this calculation to the final entropy value.
+        for(Row row: examples){
+
+        }
         return 0;
     }
 
