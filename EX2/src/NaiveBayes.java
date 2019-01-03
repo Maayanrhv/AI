@@ -83,6 +83,7 @@ public class NaiveBayes {
             int amountOfValuesInAttName = data.getPossibleAttributes()[attAndClass.attributeTypePos].size();
             double prob = (attAndClass.probability + 1)/
                             (classesProbs.get(attAndClass.classification) + amountOfValuesInAttName);
+            //double prob = (attAndClass.probability)/ (classesProbs.get(attAndClass.classification));
             AttGivenClassProb agcp = new AttGivenClassProb(attAndClass.attribute, attAndClass.classification, prob);
             attsGivenClassesProbs.add(agcp);
         }

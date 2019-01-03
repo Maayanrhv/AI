@@ -103,4 +103,18 @@ public class Data {
     public void setAmountOfAttributes(int amountOfAttributesVal) {
         amountOfAttributes = amountOfAttributesVal;
     }
+
+    /* Methods */
+    /**
+     * maps an attribute name to its position.
+     * @param attName attribute name to find its position
+     * @return the attribute name's position
+     */
+    public int findPossibleAttsPositionByAttName(String attName){
+        for(int i=0; i<attributesPositions.size(); i++){
+            if(attributesPositions.get(i).equals(attName))
+                return i;
+        }
+        return -1;
+    }
 }
