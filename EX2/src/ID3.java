@@ -154,14 +154,35 @@ public class ID3 {
         return newAtts;
     }
 
-    //TODO: complete this func
     /**
      * calculates the most common classification in a group of training rows.
      * @param examples the training rows
      * @return a leaf node with the calculated classification
      */
     Node Mode(ArrayList<Row> examples){
-        return null;
+        // create a new map that holds how many rows there are with a specific classification value
+        Map<String, Integer> amountOfClass = new HashMap<>();
+        for(Row row: examples){
+            // if this row's classification does not exist in amountOfClass's keys,
+            // then add it as a new key with value of 1
+            if(!amountOfClass.containsKey(row.getClassification())){
+                amountOfClass.put(row.getClassification(), 1);
+            }
+            // otherwise, add +1 to the key's value where key = this row's classification
+            else{
+                amountOfClass.put(row.getClassification(), amountOfClass.get(row.getClassification()) + 1);
+            }
+        }
+        // go through amountOfClass map, and check which classification has the most repeats
+        String mostCommonClass = "";
+        int max = 0;
+        for(Map.Entry<String, Integer> classVal : amountOfClass.entrySet()){
+            if(max < classVal.getValue()){
+                max = classVal.getValue();
+                mostCommonClass = classVal.getKey();
+            }
+        }
+        return new Node(mostCommonClass);
     }
 
     //TODO: complete this func
