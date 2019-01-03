@@ -31,6 +31,7 @@ public class NaiveBayes {
      * row index number in the test file.
      */
     public Map<Integer,String> algorithm(){
+        //TODO: how to calculate #AttPossibleValues
         // Bayes: P(Att|Class) = (N(Att & Class) + 1)/ (N(Class) + #AttPossibleValues)
         Map<Integer,String> predictedClassifications = new HashMap<>();
         // We hold a list of each class type to ease the Naive Bayes calculations later.
