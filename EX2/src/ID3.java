@@ -38,7 +38,7 @@ public class ID3 {
         Node tree = DTL(data.getTrainRows(), data.getAttributeRelation(), new Node(defClass));
 
         // Print tree
-        //printTree(tree);
+        printTree(tree);
 
         // Predict classifications
         // for each row in the test file, find its classification
@@ -301,9 +301,8 @@ public class ID3 {
         return predictClass(testRow, tree.attributeValuesNodes.get(attVal));
     }
 
-    //TODO: complete this func
     void printTree(Node tree){
-
+        TreeOutputGenerator.generateOutputFile(tree);
     }
 }
 
@@ -341,5 +340,25 @@ class Node{
         this.classification = classification;
         this.attributeName = null;
         this.attributeValuesNodes = null;
+    }
+
+    /* Method */
+    /**
+     * @return the values of the attribute name from the map.
+     */
+    public String[] getAttValues(){
+        if(this.attributeValuesNodes != null) {
+            String[] attVals = new String[this.attributeValuesNodes.size()];
+            int i = 0;
+            for (Map.Entry<String, Node> entry : this.attributeValuesNodes.entrySet()) {
+                attVals[i] = entry.getKey();
+                i++;
+            }
+            return attVals;
+        }
+        else{
+            // it's a leaf
+            return null;
+        }
     }
 }
