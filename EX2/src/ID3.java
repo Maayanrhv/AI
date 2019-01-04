@@ -88,8 +88,8 @@ public class ID3 {
         //         - Gain(examples, attName) using Entropy(examples)
         //         - take the attribute with the biggest Gain value
         String best = null;
-        int gain;
-        int maxGain = 0;
+        double gain;
+        double maxGain = 0;
         for(Map.Entry<Integer, String> attName : attributes.getAttributesPositions().entrySet()){
              gain = Gain(examples, attName.getValue());
              if(maxGain < gain){
@@ -192,21 +192,71 @@ public class ID3 {
         return new Node(mostCommonClass);
     }
 
-    //TODO: complete this func
-    int Gain(ArrayList<Row> examples, String best){
-        //calls Entropy(examples)
-        return 0;
+    /**
+     * calculates the gain of examples with a given attribute name
+     * @param examples list of train data rows
+     * @param attName attribute name (type)
+     * @return the calculated gain
+     */
+    double Gain(ArrayList<Row> examples, String attName){
+        // A - attribute name
+        //      Ai - each attribute value of type A
+        // S - examples, list of train rows
+        //      Sv - a sub-list of train rows in examples,
+        //           where all attributes values of type A are equal to Ai
+
+        //calculate sigma: sum of((|Sv|/|S|)* Entropy(S))
+        double sigma = 0;
+        //find A's position
+        int posA = data.getAttributeRelation().findPossibleAttsPositionByAttName(attName);
+        double entropyOfS = Entropy(examples);
+        for(String attVal: data.getAttributeRelation().getPossibleAttributes()[posA]){
+            // create Sv list
+            ArrayList<Row> Sv = new ArrayList<>();
+            for (Row row: examples){
+                if(row.getValues().get(attName).equals(attVal)){
+                    Sv.add(row);
+                }
+            }
+
+            sigma +=  ((double) (Sv.size()/examples.size()) * entropyOfS);
+        }
+
+        //calculate gain: Entropy(S) - sigma
+        return (Entropy(examples) - sigma);
     }
 
-    //TODO: complete this func
+    /**
+     * calculates the entropy of each classification value in a
+     * list of train data rows and sums them up.
+     * @param examples list of train data rows
+     * @return the summed-up entropy of each classification value.
+     */
     double Entropy(ArrayList<Row> examples){
         double entropy = 0;
-        // for each classification p, calculate: -p * log(p)
-        // add this calculation to the final entropy value.
+        // keep all possible classification values in a list.
+        int classesAmount = data.getPossibleClassifications().size();
+        // an array that keeps the amount of rows in examples that have a classification value
+        double[] eacClassValAmount = new double[classesAmount];
+        // classVal will contain each possible classification value
+        String classVal;
+        // count how many appearances of each classification value there are in examples
         for(Row row: examples){
-
+            for(int i=0; i<classesAmount; i++){
+                classVal = data.getPossibleClassifications().get(i);
+                if(row.getClassification().equals(classVal)){
+                    eacClassValAmount[i]++;
+                }
+            }
         }
-        return 0;
+        // for each classification p, calculate: -p * log(p)
+        // add this calculation to the final entropy value
+        for(int i=0; i<classesAmount; i++){
+            eacClassValAmount[i] = eacClassValAmount[i]/examples.size();
+            entropy -= eacClassValAmount[i] * Math.log(eacClassValAmount[i] / Math.log(2));
+        }
+
+        return entropy;
     }
 
     //TODO: complete this func
