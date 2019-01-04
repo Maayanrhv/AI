@@ -38,7 +38,7 @@ public class ID3 {
         Node tree = DTL(data.getTrainRows(), data.getAttributeRelation(), new Node(defClass));
 
         // Print tree
-        printTree(tree);
+        //printTree(tree);
 
         // Predict classifications
         // for each row in the test file, find its classification
@@ -81,23 +81,29 @@ public class ID3 {
         if(allEqual){ return new Node(aClass); }
         //      - if the attributes list is empty, but there are still some different
         //        classifications - return Mode(examples)
-        if(attributes == null){ return Mode(examples); }
+        if(attributes.getAttributesPositions().isEmpty()){ return Mode(examples); }
 
 
         // Step 1: choose the ideal attribute name -> best
         //         - Gain(examples, attName) using Entropy(examples)
         //         - take the attribute with the biggest Gain value
         String best = null;
-        double gain;
-        double maxGain = 0;
-        for(Map.Entry<Integer, String> attName : attributes.getAttributesPositions().entrySet()){
-             gain = Gain(examples, attName.getValue());
-             if(maxGain < gain){
-                 maxGain = gain;
-                 best = attName.getValue();
-             }
+        if(attributes.getAttributesPositions().size() == 1){
+            best = attributes.getAttributesPositions().get(0);
+        }
+        else {
+            double gain;
+            double maxGain = 0;
+            for (Map.Entry<Integer, String> attName : attributes.getAttributesPositions().entrySet()) {
+                gain = Gain(examples, attName.getValue());
+                if (maxGain < gain) {
+                    maxGain = gain;
+                    best = attName.getValue();
+                }
+            }
         }
 
+        //TODO: what happens if gain == 0?
 
         Node tree = null;
         // Step 2: for each attribute value vi in best do:
@@ -117,9 +123,14 @@ public class ID3 {
             Node subtree = DTL(iExamples, attributesWithoutBest, Mode(examples));
             //         - create a new node with the attribute name, best and subtree -> tree
             //           subtree is a branch of tree with attribute value - vi
-            Map<String, Node> branches = new HashMap<>();
-            branches.put(vi, subtree);
-            tree = new Node(best, branches);
+            if(tree == null) {
+                Map<String, Node> branches = new HashMap<>();
+                branches.put(vi, subtree);
+                tree = new Node(best, branches);
+            }
+            else{
+                tree.attributeValuesNodes.put(vi,subtree);
+            }
         }
 
 
@@ -219,11 +230,11 @@ public class ID3 {
                 }
             }
 
-            sigma +=  ((double) (Sv.size()/examples.size()) * entropyOfS);
+            sigma +=  ((double)(Sv.size()) / (double)(examples.size()) * Entropy(Sv));
         }
 
         //calculate gain: Entropy(S) - sigma
-        return (Entropy(examples) - sigma);
+        return (entropyOfS - sigma);
     }
 
     /**
@@ -237,7 +248,7 @@ public class ID3 {
         // keep all possible classification values in a list.
         int classesAmount = data.getPossibleClassifications().size();
         // an array that keeps the amount of rows in examples that have a classification value
-        double[] eacClassValAmount = new double[classesAmount];
+        double[] eachClassValAmount = new double[classesAmount];
         // classVal will contain each possible classification value
         String classVal;
         // count how many appearances of each classification value there are in examples
@@ -245,17 +256,21 @@ public class ID3 {
             for(int i=0; i<classesAmount; i++){
                 classVal = data.getPossibleClassifications().get(i);
                 if(row.getClassification().equals(classVal)){
-                    eacClassValAmount[i]++;
+                    eachClassValAmount[i]++;
                 }
             }
         }
         // for each classification p, calculate: -p * log(p)
         // add this calculation to the final entropy value
         for(int i=0; i<classesAmount; i++){
-            eacClassValAmount[i] = eacClassValAmount[i]/examples.size();
-            entropy -= eacClassValAmount[i] * Math.log(eacClassValAmount[i] / Math.log(2));
+            eachClassValAmount[i] = eachClassValAmount[i]/examples.size();
+            //TODO: in case there's no row with this classification value, ignore it. Am I right?
+            if(eachClassValAmount[i] > 0) {
+                entropy -= eachClassValAmount[i] * Math.log(eachClassValAmount[i] / Math.log(2));
+            }
         }
 
+        //TODO: can entropy be < 0?
         return entropy;
     }
 
