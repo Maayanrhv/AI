@@ -117,6 +117,13 @@ public class ID3 {
                     iExamples.add(row);
                 }
             }
+
+            if(examples.size() == iExamples.size() && examples.size() > 0){
+                // all rows has vi attribute value, so create a leaf
+                tree = new Node(iExamples.get(0).getClassification());
+                break;
+            }
+
             // calculate attributes without best
             AttributeRelation attributesWithoutBest = CalcAttsWithoutBest(attributes, best);
             //         - recursive call to DTL(iExamples, attributes\{best}, Mode(examples)) -> subtree
@@ -132,7 +139,6 @@ public class ID3 {
                 tree.attributeValuesNodes.put(vi,subtree);
             }
         }
-
 
         // Step 3: return tree
         return tree;
