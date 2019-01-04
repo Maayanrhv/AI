@@ -259,9 +259,25 @@ public class ID3 {
         return entropy;
     }
 
-    //TODO: complete this func
+    /**
+     * Predicts the classification of a given test row.
+     * This is a recursive function that runs through the data tree
+     * and searches for the branch that contains the test row's attribute values.
+     * @param testRow the row to predict its classification
+     * @param tree the DTL tree to run through
+     * @return the predicted classification of the given test row
+     */
     String predictClass(Row testRow, Node tree){
-        return null;
+        // Stop condition: if the node's classification isn't null - return it
+        if(tree.classification != null){
+            return tree.classification;
+        }
+
+        // otherwise, call recursively to this func with the attributes values
+        // of the given row until reaching a classification
+        String attName = tree.attributeName;
+        String attVal = testRow.getValues().get(attName);
+        return predictClass(testRow, tree.attributeValuesNodes.get(attVal));
     }
 
     //TODO: complete this func
@@ -279,6 +295,8 @@ public class ID3 {
 class Node{
     /* Properties */
     String attributeName;
+    // String - each value of this attribute name
+    // Node - the root of a branch (subtree)
     Map<String, Node> attributeValuesNodes;
     String classification;
 
