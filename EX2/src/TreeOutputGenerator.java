@@ -24,6 +24,13 @@ public class TreeOutputGenerator {
         }
     }
 
+    /**
+     * creates a string with the entire tree format to print
+     * @param tree to print
+     * @param string at the end of the recursion, it will contain the tree in a printing format
+     * @param depth current depth of the tree
+     * @return
+     */
     static String printTree(Node tree, String string, int depth){
         if(tree.classification != null){
             // we reached a leaf

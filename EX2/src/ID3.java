@@ -103,8 +103,6 @@ public class ID3 {
             }
         }
 
-        //TODO: what happens if gain == 0?
-
         Node tree = null;
         // Step 2: for each attribute value vi in best do:
         for(String vi: data.getAttributeRelation().getPossibleAttributes()
@@ -116,12 +114,6 @@ public class ID3 {
                 if(row.getValues().get(best).equals(vi)){
                     iExamples.add(row);
                 }
-            }
-
-            if(examples.size() == iExamples.size() && examples.size() > 0){
-                // all rows has vi attribute value, so create a leaf
-                tree = new Node(iExamples.get(0).getClassification());
-                break;
             }
 
             // calculate attributes without best
@@ -236,7 +228,7 @@ public class ID3 {
                 }
             }
 
-            sigma +=  ((double)(Sv.size()) / (double)(examples.size()) * Entropy(Sv));
+            sigma +=  ((double)(Sv.size()) * Entropy(Sv) / (double)(examples.size()));
         }
 
         //calculate gain: Entropy(S) - sigma
@@ -272,11 +264,10 @@ public class ID3 {
             eachClassValAmount[i] = eachClassValAmount[i]/examples.size();
             //TODO: in case there's no row with this classification value, ignore it. Am I right?
             if(eachClassValAmount[i] > 0) {
-                entropy -= eachClassValAmount[i] * Math.log(eachClassValAmount[i] / Math.log(2));
+                entropy -= eachClassValAmount[i] * (Math.log(eachClassValAmount[i]) / (Math.log(2)));
             }
         }
 
-        //TODO: can entropy be < 0?
         return entropy;
     }
 
