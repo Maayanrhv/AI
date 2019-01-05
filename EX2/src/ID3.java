@@ -48,6 +48,8 @@ public class ID3 {
             predictedClassifications.put(testRow.getRowNumber(), predictedClass);
         }
 
+        // calculate ID3's accuracy percentage.
+        percentageCalc(predictedClassifications);
         return predictedClassifications;
     }
 
@@ -262,7 +264,6 @@ public class ID3 {
         // add this calculation to the final entropy value
         for(int i=0; i<classesAmount; i++){
             eachClassValAmount[i] = eachClassValAmount[i]/examples.size();
-            //TODO: in case there's no row with this classification value, ignore it. Am I right?
             if(eachClassValAmount[i] > 0) {
                 entropy -= eachClassValAmount[i] * (Math.log(eachClassValAmount[i]) / (Math.log(2)));
             }
@@ -294,6 +295,25 @@ public class ID3 {
 
     void printTree(Node tree){
         TreeOutputGenerator.generateOutputFile(tree);
+    }
+
+    /**
+     * Calculates this algorithm's amount of correct predictions
+     * in relation to all predictions (the amount of test rows).
+     * The calculated value is put in algPredictionPercentage property.
+     * @param predictedClassifications the predicted classifications
+     */
+    public void percentageCalc(Map<Integer,String> predictedClassifications){
+        int testRowsAmount = testData.getTestRows().size();
+        int corrPredictAmount = 0;
+        for (Map.Entry<Integer, String> aRow : predictedClassifications.entrySet()) {
+            String prediction = aRow.getValue();
+            String corrClass = testData.getTestRows().get(aRow.getKey()-1).getClassification();
+            if(prediction.equals(corrClass)){
+                corrPredictAmount++;
+            }
+        }
+        algPredictionPercentage = (double)(corrPredictAmount)/(double) (testRowsAmount);
     }
 }
 
