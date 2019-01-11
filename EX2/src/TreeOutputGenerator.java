@@ -1,8 +1,10 @@
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+
 
 /**
  * Generates an output tree file in a given directory path.
@@ -24,6 +26,71 @@ public class TreeOutputGenerator {
             System.out.println("Error writing file '" + filePath + "'");
         }
     }
+
+    static String[] sort(String[] attsVals){
+        // find out whether there are numbers in the data
+        boolean isNumeric = false;
+        int howManyNumerics = 0;
+        ArrayList<String> partialNumericList = new ArrayList<>();
+        ArrayList<String> partialStringList = new ArrayList<>();
+        for(String value: attsVals){
+            if(isNumeric(value)){
+                howManyNumerics++;
+                isNumeric = true;
+                partialNumericList.add(value);
+            }
+            else{
+                partialStringList.add(value);
+            }
+        }
+
+        if(isNumeric){
+            return sortNumericAndReturnStringList(partialStringList, partialNumericList);
+        }
+        else {
+            // in case none of the values are numeric, all are strings that represent characters or words
+            Arrays.sort(attsVals);
+            return attsVals;
+        }
+    }
+
+    static String[] sortNumericAndReturnStringList(ArrayList<String> partialStringList, ArrayList<String> partialNumericList){
+        // first, put the numeric values
+        int[] intAttsVals = new int[partialNumericList.size()];
+        int i = 0;
+        for (String val: partialNumericList) {
+            intAttsVals[i] = Integer.parseInt(val);
+            i++;
+        }
+        Arrays.sort(intAttsVals);
+        //reverse to string
+        String[] sortedStringArray = new String[partialNumericList.size()];
+        for (int j = 0; j < intAttsVals.length; j++) {
+            sortedStringArray[j] = "" + intAttsVals[j];
+        }
+
+        // add the rest of the attsVals array if necessary
+        if(!partialStringList.isEmpty()) {
+            // in case some of the values are numeric, not all of them
+            // then put the strings values that are left
+            for(String stringVal : partialStringList) {
+                sortedStringArray[i] = stringVal;
+            }
+        }
+        return sortedStringArray;
+    }
+
+    static boolean isNumeric(String str)
+    {
+        try {
+            Double.parseDouble(str);
+        }
+        catch(NumberFormatException nfe) {
+            return false;
+        }
+        return true;
+    }
+
 
     /**
      * creates a string with the entire tree format to print
@@ -52,8 +119,10 @@ public class TreeOutputGenerator {
         }
         // order attributes alphabetically
         String[] attsVals = tree.getAttValues();
+        //ArrayList<String> attsVals = new ArrayList<>(Arrays.asList(tree.getAttValues()));
         //Arrays.sort(attsVals);
-        //Collections.sort(Arrays.sort(attsVals));
+        //Collections.sort(attsVals);
+        attsVals = sort(attsVals);
 
         for(int j=0; j<attsVals.length; j++){
             string += tree.attributeName + "=" + attsVals[j];
@@ -69,6 +138,19 @@ public class TreeOutputGenerator {
             }
         }
 
+       /* for(int j=0; j<attsVals.size(); j++){
+            string += tree.attributeName + "=" + attsVals.get(j);
+            string = printTree(tree.attributeValuesNodes.get(attsVals.get(j)), string, depth +1);
+            if(j < attsVals.size() -1) {
+                string += "\n";
+                for(i=0; i<depth; i++){
+                    string += "\t";
+                }
+                if(depth != 0){
+                    string += "|";
+                }
+            }
+        }*/
         return string;
     }
 }
