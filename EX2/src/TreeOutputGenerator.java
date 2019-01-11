@@ -27,15 +27,18 @@ public class TreeOutputGenerator {
         }
     }
 
+    /**
+     * sort the attributes values before printing the tree.
+     * @param attsVals attributes values to sort
+     * @return sorted attributes values string array
+     */
     static String[] sort(String[] attsVals){
         // find out whether there are numbers in the data
         boolean isNumeric = false;
-        int howManyNumerics = 0;
         ArrayList<String> partialNumericList = new ArrayList<>();
         ArrayList<String> partialStringList = new ArrayList<>();
         for(String value: attsVals){
             if(isNumeric(value)){
-                howManyNumerics++;
                 isNumeric = true;
                 partialNumericList.add(value);
             }
@@ -45,6 +48,7 @@ public class TreeOutputGenerator {
         }
 
         if(isNumeric){
+            // in case some or all of the values are numeric
             return sortNumericAndReturnStringList(partialStringList, partialNumericList);
         }
         else {
@@ -54,6 +58,12 @@ public class TreeOutputGenerator {
         }
     }
 
+    /**
+     * sorts a list of partially or fully numeric string values.
+     * @param partialStringList the list of all the none numeric values in attsVals
+     * @param partialNumericList the list of all the numeric values in attsVals
+     * @return the sorted attributes values string array.
+     */
     static String[] sortNumericAndReturnStringList(ArrayList<String> partialStringList, ArrayList<String> partialNumericList){
         // first, put the numeric values
         int[] intAttsVals = new int[partialNumericList.size()];
@@ -80,6 +90,11 @@ public class TreeOutputGenerator {
         return sortedStringArray;
     }
 
+    /**
+     * checks whether the attributes values are numeric or not.
+     * @param str an attribute's value
+     * @return true if str numeric, false otherwise.
+     */
     static boolean isNumeric(String str)
     {
         try {
@@ -97,7 +112,7 @@ public class TreeOutputGenerator {
      * @param tree to print
      * @param string at the end of the recursion, it will contain the tree in a printing format
      * @param depth current depth of the tree
-     * @return
+     * @return the string to print
      */
     static String printTree(Node tree, String string, int depth){
         if(tree.classification != null){
@@ -117,11 +132,7 @@ public class TreeOutputGenerator {
         if(i != 0){
             string += "|";
         }
-        // order attributes alphabetically
         String[] attsVals = tree.getAttValues();
-        //ArrayList<String> attsVals = new ArrayList<>(Arrays.asList(tree.getAttValues()));
-        //Arrays.sort(attsVals);
-        //Collections.sort(attsVals);
         attsVals = sort(attsVals);
 
         for(int j=0; j<attsVals.length; j++){
@@ -138,19 +149,6 @@ public class TreeOutputGenerator {
             }
         }
 
-       /* for(int j=0; j<attsVals.size(); j++){
-            string += tree.attributeName + "=" + attsVals.get(j);
-            string = printTree(tree.attributeValuesNodes.get(attsVals.get(j)), string, depth +1);
-            if(j < attsVals.size() -1) {
-                string += "\n";
-                for(i=0; i<depth; i++){
-                    string += "\t";
-                }
-                if(depth != 0){
-                    string += "|";
-                }
-            }
-        }*/
         return string;
     }
 }
