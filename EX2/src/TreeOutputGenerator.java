@@ -2,6 +2,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Arrays;
+import java.util.Collections;
 
 /**
  * Generates an output tree file in a given directory path.
@@ -51,7 +52,8 @@ public class TreeOutputGenerator {
         }
         // order attributes alphabetically
         String[] attsVals = tree.getAttValues();
-        Arrays.sort(attsVals);
+        //Arrays.sort(attsVals);
+        //Collections.sort(Arrays.sort(attsVals));
 
         for(int j=0; j<attsVals.length; j++){
             string += tree.attributeName + "=" + attsVals[j];
