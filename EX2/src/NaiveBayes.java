@@ -35,7 +35,7 @@ public class NaiveBayes {
         Map<Integer,String> predictedClassifications = new HashMap<>();
         // We hold a list of each class type to ease the Naive Bayes calculations later.
         Map<String, Double> classesProbs = new HashMap<>(); // keeps the probabilities of each classification value. P(Class)
-        Map<String, Double> classesAmounts = new HashMap<>(); // keeps the amount of rows for each classification value. N(Class)
+        Map<String, Integer> classesAmounts = new HashMap<>(); // keeps the amount of rows for each classification value. N(Class)
         ArrayList<AttAndClassProb> attsAndClassesProbs = new ArrayList<>();
         ArrayList<AttGivenClassProb> attsGivenClassesProbs = new ArrayList<>();
         // first, calculate the probability of each classification value
@@ -52,7 +52,7 @@ public class NaiveBayes {
             }
             double prob = (double)classCount / data.getTrainRows().size();
             classesProbs.put(classVal, prob);
-            classesAmounts.put(classVal, (double)classCount);
+            classesAmounts.put(classVal, classCount);
             classCount = 0;
         }
 
@@ -117,6 +117,17 @@ public class NaiveBayes {
                 if(max < multVal) {
                     max = multVal;
                     predictedClassification = possibleClass;
+                }
+                else if(max == multVal){
+                    // in case probabilities of all classifications are equal
+                    int newMax = 0;
+                    for(Map.Entry<String, Integer> amount:classesAmounts.entrySet()){
+                        int val = amount.getValue();
+                        if(newMax < val){
+                            newMax = val;
+                            predictedClassification = amount.getKey();
+                        }
+                    }
                 }
             }
             predictedClassifications.put(testRow.getRowNumber(), predictedClassification);
